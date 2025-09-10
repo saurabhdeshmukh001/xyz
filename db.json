@@ -1,16 +1,32 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "email": "customer@example.com",
       "password": "customer123",
       "role": "customer"
     },
     {
-      "id": 2,
+      "id": "2",
       "email": "seller@example.com",
       "password": "seller123",
       "role": "seller"
+    },
+    {
+      "id": "9a8b",
+      "name": "Saurabh Sanjay Deshmukh",
+      "phone": "9424782368",
+      "email": "saurabh@gmail.com",
+      "password": "saurabh123",
+      "role": "customer"
+    },
+    {
+      "id": "7db9",
+      "name": "harsh",
+      "phone": "876478984",
+      "email": "harsh@gmail.com",
+      "password": "harsh123",
+      "role": "customer"
     }
   ]
 }

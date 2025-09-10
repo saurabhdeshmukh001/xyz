@@ -12,7 +12,7 @@ function Signup() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -20,14 +20,40 @@ function Signup() {
       return;
     }
 
-    if (!name || !phone || !email) {
+    if (
+      !name ||
+      !phone ||
+      !email
+    ) {
       setError("All fields are required.");
       return;
     }
 
-    setError("");
-    alert("Customer account created successfully!");
-    navigate("/login");
+    const newUser = {
+      name,
+      phone,
+      email,
+      password,
+      role: "customer",
+    };
+
+    try {
+      const response = await fetch("http://localhost:5001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      });
+      if (response.ok) {
+        setError("");
+        navigate("/home");
+      } else {
+        setError("Failed to create account. Please try again.");
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -51,7 +77,7 @@ function Signup() {
 
       {/* Signup Card */}
       <div className="relative flex items-center justify-center h-screen z-10">
-        <div className="bg-black/40 backdrop-blur-md shadow-2xl rounded-2xl p-4 w-full max-w-md text-white">
+        <div className="bg-black/40 backdrop-blur-md shadow-2xl rounded-2xl p-4 w-full max-w-md h-[500px] overflow-y-auto text-white">
           <h2 className="text-3xl font-bold text-center mb-6">Customer Sign Up</h2>
 
           {error && (
@@ -59,80 +85,77 @@ function Signup() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-2">
-            {/* Name */}
-            <div>
-              <label className="block mb-1 font-medium">Full Name</label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Enter your name"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
-                           focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
-                required
-              />
+            <div className="flex flex-col gap-4">
+              {/* Full Name */}
+              <div>
+                <label className="block mb-1 font-medium">Full Name</label>
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter your name"
+                  className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2
+                             focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
+                  required
+                />
+              </div>
+              {/* Email */}
+              <div>
+                <label className="block mb-1 font-medium">Email</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2
+                             focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
+                  required
+                />
+              </div>
+              {/* Password */}
+              <div>
+                <label className="block mb-1 font-medium">Password</label>
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                  className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2
+                             focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
+                  required
+                />
+              </div>
+              {/* Phone Number */}
+              <div>
+                <label className="block mb-1 font-medium">Phone Number</label>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Enter your phone number"
+                  className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2
+                             focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
+                  required
+                />
+              </div>
+              {/* Confirm Password */}
+              <div>
+                <label className="block mb-1 font-medium">Confirm Password</label>
+                <input
+                  type="password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="Confirm your password"
+                  className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2
+                             focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
+                  required
+                />
+              </div>
             </div>
-
-            {/* Phone */}
-            <div>
-              <label className="block mb-1 font-medium">Phone Number</label>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="Enter your phone number"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
-                           focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
-                required
-              />
-            </div>
-
-            {/* Email */}
-            <div>
-              <label className="block mb-1 font-medium">Email</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
-                           focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
-                required
-              />
-            </div>
-
-            {/* Password */}
-            <div>
-              <label className="block mb-1 font-medium">Password</label>
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
-                           focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
-                required
-              />
-            </div>
-
-            {/* Confirm Password */}
-            <div>
-              <label className="block mb-1 font-medium">Confirm Password</label>
-              <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Confirm your password"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
-                           focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
-                required
-              />
-            </div>
-
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-red-600 text-white font-semibold py-2 rounded-lg hover:bg-red-700 transition"
+              className="w-full bg-red-600 text-white font-semibold py-2 rounded-lg hover:bg-red-700 transition mt-4"
             >
               Sign Up
             </button>
