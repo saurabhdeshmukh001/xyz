@@ -10,29 +10,35 @@ function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  // Hardcoded credentials
-  const credentials = {
-    customer: { email: "customer@example.com", password: "customer123" },
-    seller: { email: "seller@example.com", password: "seller123" },
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
-    if (
-      email === credentials[role].email &&
-      password === credentials[role].password
-    ) {
-      setError("");
+    try {
+      const response = await fetch("http://localhost:3000/users");
 
-      // Navigate based on role
-      if (role === "customer") {
-        navigate("/home");
-      } else if (role === "seller") {
-        navigate("/admin");
+      if (!response.ok) {
+        throw new Error("Failed to fetch user data.");
       }
-    } else {
-      setError("Invalid credentials. Please try again.");
+
+      const users = await response.json();
+
+      const user = users.find(
+        (u) => u.email === email && u.role === role
+      );
+
+      if (user && user.password === password) {
+        if (role === "customer") {
+          navigate("/home");
+        } else if (role === "seller") {
+          navigate("/admin");
+        }
+      } else {
+        setError("Invalid credentials. Please try again.");
+      }
+    } catch (err) {
+      console.error("Login failed:", err);
+      setError("An error occurred. Please try again later.");
     }
   };
 
@@ -49,7 +55,11 @@ function Login() {
         <source src="/videos/vid.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-       <Navbar></Navbar>
+
+      {/* Overlay to decrease video opacity */}
+      <div className="absolute inset-0 bg-black opacity-50 z-0"></div> {/* Adjust opacity-50 for desired darkness */}
+
+      <Navbar></Navbar>
 
       {/* Login Card */}
       <div className="relative flex items-center justify-center h-screen z-10">

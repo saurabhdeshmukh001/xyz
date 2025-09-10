@@ -43,27 +43,31 @@ function Signup() {
         <source src="/videos/vid.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
+      {/* Overlay to decrease video opacity */}
+      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+
       <Navbar></Navbar>
 
       {/* Signup Card */}
       <div className="relative flex items-center justify-center h-screen z-10">
-        <div className="bg-black/40 backdrop-blur-md shadow-2xl rounded-2xl p-8 w-full max-w-sm text-white">
+        <div className="bg-black/40 backdrop-blur-md shadow-2xl rounded-2xl p-4 w-full max-w-md text-white">
           <h2 className="text-3xl font-bold text-center mb-6">Customer Sign Up</h2>
 
           {error && (
             <p className="text-red-400 text-center mb-4 font-medium">{error}</p>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-2">
             {/* Name */}
             <div>
-              <label className="block mb-2 font-medium">Full Name</label>
+              <label className="block mb-1 font-medium">Full Name</label>
               <input
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter your name"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2 
+                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
                            focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
                 required
               />
@@ -71,13 +75,13 @@ function Signup() {
 
             {/* Phone */}
             <div>
-              <label className="block mb-2 font-medium">Phone Number</label>
+              <label className="block mb-1 font-medium">Phone Number</label>
               <input
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Enter your phone number"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2 
+                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
                            focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
                 required
               />
@@ -85,13 +89,13 @@ function Signup() {
 
             {/* Email */}
             <div>
-              <label className="block mb-2 font-medium">Email</label>
+              <label className="block mb-1 font-medium">Email</label>
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2 
+                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
                            focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
                 required
               />
@@ -99,13 +103,13 @@ function Signup() {
 
             {/* Password */}
             <div>
-              <label className="block mb-2 font-medium">Password</label>
+              <label className="block mb-1 font-medium">Password</label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2 
+                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
                            focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
                 required
               />
@@ -113,13 +117,13 @@ function Signup() {
 
             {/* Confirm Password */}
             <div>
-              <label className="block mb-2 font-medium">Confirm Password</label>
+              <label className="block mb-1 font-medium">Confirm Password</label>
               <input
                 type="password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Confirm your password"
-                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-2 
+                className="w-full border border-gray-600 bg-transparent rounded-lg px-3 py-1
                            focus:ring-2 focus:ring-red-500 focus:outline-none placeholder-gray-400"
                 required
               />

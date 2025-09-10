@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "customer@example.com",
+      "password": "customer123",
+      "role": "customer"
+    },
+    {
+      "id": 2,
+      "email": "seller@example.com",
+      "password": "seller123",
+      "role": "seller"
+    }
+  ]
+}
