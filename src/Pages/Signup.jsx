@@ -46,6 +46,8 @@ function Signup() {
         body: JSON.stringify(newUser),
       });
       if (response.ok) {
+        const createdUser = await response.json();
+        localStorage.setItem("user", JSON.stringify(createdUser));
         setError("");
         navigate("/home");
       } else {

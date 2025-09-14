@@ -3,12 +3,14 @@
     {
       "id": "1",
       "email": "customer@example.com",
+      "name": "Customer",
       "password": "customer123",
       "role": "customer"
     },
     {
       "id": "2",
       "email": "seller@example.com",
+      "name": "Seller",
       "password": "seller123",
       "role": "seller"
     },
@@ -27,6 +29,88 @@
       "email": "harsh@gmail.com",
       "password": "harsh123",
       "role": "customer"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Sneaker Alpha",
+      "price": 4399,
+      "description": "High comfort sneaker",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Sport Shoes"
+    },
+    {
+      "id": 2,
+      "name": "Sneaker Beta",
+      "price": 4409,
+      "description": "Performance sneaker",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": 3,
+      "name": "Sneaker Gamma",
+      "price": 4999,
+      "description": "Stylish sneaker for daily wear",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Basketball Shoes"
+    },
+    {
+      "id": 4,
+      "name": "Nike Air Zoom Pegasus",
+      "price": 6999,
+      "description": "Lightweight running shoes for daily training.",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Sport Shoes"
+    },
+    {
+      "id": 5,
+      "name": "Adidas Ultraboost",
+      "price": 8499,
+      "description": "High-performance running sneakers with superior cushioning.",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Sport Shoes"
+    },
+    {
+      "id": 6,
+      "name": "Puma Smash Casuals",
+      "price": 2999,
+      "description": "Classic casual sneakers for everyday wear.",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": 7,
+      "name": "Air Jordan 1",
+      "price": 9999,
+      "description": "Iconic basketball sneakers with premium design.",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Basketball Shoes"
+    },
+    {
+      "id": 8,
+      "name": "Reebok Classic Leather",
+      "price": 3599,
+      "description": "Timeless leather sneakers with casual style.",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": 9,
+      "name": "Under Armour Curry 7",
+      "price": 8999,
+      "description": "Signature basketball shoes for speed and control.",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Basketball Shoes"
+    },
+    {
+      "id": "d048",
+      "name": "Piyush Shoes",
+      "price": 300,
+      "description": "good shoes",
+      "category": "Casual Shoes",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fbaccabucci.com%2Fproducts%2Fwhite-shoes-for-men-afterburn-white-sneakers-for-men-bacca-bucci%3Fsrsltid%3DAfmBOoopoKNWco-5X6WVC5lZ-is1JeNKnzGDuXFq9xql5dEcgFzWOr1S&psig=AOvVaw1bKLAHYkhKBo3uXPzg4JBI&ust=1757954572967000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKioq6DZ2I8DFQAAAAAdAAAAABAE"
     }
   ]
 }

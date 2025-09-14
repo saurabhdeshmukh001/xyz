@@ -28,6 +28,8 @@ function Login() {
       );
 
       if (user && user.password === password) {
+        // Save user to localStorage
+        localStorage.setItem("user", JSON.stringify(user));
         if (role === "customer") {
           navigate("/home");
         } else if (role === "seller") {
