@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddProduct from "./Pages/AddProduct";
 import Landing from "./Pages/Landing";
@@ -7,6 +6,7 @@ import Signup from "./Pages/Signup";
 import Home from "./Pages/Home";
 import Admin from "./Pages/admin";
 import Cart from "./Pages/Cart";
+import ProfileManage from "./Pages/ProfileManage"; // Import the new component
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/profile" element={<ProfileManage />} /> {/* Add this new route */}
       </Routes>
     </Router>
   );

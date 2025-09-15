@@ -4,8 +4,10 @@
       "id": "1",
       "email": "customer@example.com",
       "name": "Customer",
+      "phone": "9424782368",
       "password": "customer123",
       "role": "customer"
+      
     },
     {
       "id": "2",
@@ -111,6 +113,28 @@
       "description": "good shoes",
       "category": "Casual Shoes",
       "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fbaccabucci.com%2Fproducts%2Fwhite-shoes-for-men-afterburn-white-sneakers-for-men-bacca-bucci%3Fsrsltid%3DAfmBOoopoKNWco-5X6WVC5lZ-is1JeNKnzGDuXFq9xql5dEcgFzWOr1S&psig=AOvVaw1bKLAHYkhKBo3uXPzg4JBI&ust=1757954572967000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKioq6DZ2I8DFQAAAAAdAAAAABAE"
+    }
+  ],
+  "cartItems": [
+    {
+      "id": "07cd",
+      "productId": 3,
+      "name": "Sneaker Gamma",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Basketball Shoes",
+      "originalPrice": 4999,
+      "totalPrice": 4999,
+      "quantity": 1
+    },
+    {
+      "id": "8df7",
+      "productId": 7,
+      "name": "Air Jordan 1",
+      "image": "https://via.placeholder.com/300x200",
+      "category": "Basketball Shoes",
+      "originalPrice": 9999,
+      "totalPrice": 9999,
+      "quantity": 1
     }
   ]
 }

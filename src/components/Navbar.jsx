@@ -8,6 +8,7 @@ function Navbar() {
     location.pathname === "/" ||
     location.pathname === "/login" ||
     location.pathname === "/signup";
+  const isCartPage = location.pathname === "/cart";
 
   const [user, setUser] = useState(null);
 
@@ -15,7 +16,7 @@ function Navbar() {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
-      console.log("Loaded user from localStorage:", parsedUser); // debug
+      console.log("Loaded user from localStorage:", parsedUser);
       setUser(parsedUser);
     } else {
       setUser(null);
@@ -41,41 +42,45 @@ function Navbar() {
       {user && (user.role === "admin" || user.role === "seller") && (
         <div className="flex items-center space-x-8">
           <Link to="/add-product" className="hover:underline">Add Product</Link>
-          <div className="relative group cursor-pointer">
-            <span className="hover:underline">Categories</span>
-            <div className="absolute left-0 mt-0 w-48 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">
-              <button
-                onClick={() =>
-                  window.dispatchEvent(new CustomEvent("categorySelected", { detail: "All" }))
-                }
-                className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-              >
-                All
-              </button>
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Sport Shoes" }))}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-              >
-                Sport Shoes
-              </button>
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Casual Shoes" }))}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-              >
-                Casual Shoes
-              </button>
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Basketball Shoes" }))}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-              >
-                Basketball Shoes
-              </button>
+          {!isCartPage && (
+            <div className="relative group cursor-pointer">
+              <span className="hover:underline">Categories</span>
+              <div className="absolute left-0 mt-0 w-48 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">
+                <button
+                  onClick={() =>
+                    window.dispatchEvent(new CustomEvent("categorySelected", { detail: "All" }))
+                  }
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
+                >
+                  All
+                </button>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Sport Shoes" }))}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
+                >
+                  Sport Shoes
+                </button>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Casual Shoes" }))}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
+                >
+                  Casual Shoes
+                </button>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Basketball Shoes" }))}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
+                >
+                  Basketball Shoes
+                </button>
+              </div>
             </div>
-          </div>
+          )}
           <div className="relative group cursor-pointer">
             <span className="hover:underline">Profile</span>
             <div className="absolute right-0 mt-0 w-56 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">
-              <p className="font-semibold px-3 py-2 rounded hover:bg-gray-700">{user.name}</p>
+              <Link to="/profile" className="block px-3 py-2 rounded hover:bg-gray-700">
+                <p className="font-semibold">{user.name}</p>
+              </Link>
               <button
                 onClick={() => {
                   localStorage.removeItem("user");
@@ -94,39 +99,43 @@ function Navbar() {
         <div className="flex items-center space-x-8">
           <Link to="/home" className="hover:underline">Home</Link>
           <Link to="/cart" className="hover:underline">Cart</Link>
-          <div className="relative group cursor-pointer">
-            <span className="hover:underline">Categories</span>
-            <div className="absolute left-0 mt-0 w-48 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "All" }))}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-              >
-                All
-              </button>
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Sport Shoes" }))}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-              >
-                Sport Shoes
-              </button>
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Casual Shoes" }))}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-              >
-                Casual Shoes
-              </button>
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Basketball Shoes" }))}
-                className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-              >
-                Basketball Shoes
-              </button>
+          {!isCartPage && (
+            <div className="relative group cursor-pointer">
+              <span className="hover:underline">Categories</span>
+              <div className="absolute left-0 mt-0 w-48 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "All" }))}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
+                >
+                  All
+                </button>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Sport Shoes" }))}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
+                >
+                  Sport Shoes
+                </button>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Casual Shoes" }))}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
+                >
+                  Casual Shoes
+                </button>
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Basketball Shoes" }))}
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
+                >
+                  Basketball Shoes
+                </button>
+              </div>
             </div>
-          </div>
+          )}
           <div className="relative group cursor-pointer">
             <span className="hover:underline">Profile</span>
             <div className="absolute right-0 mt-0 w-56 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">
-              <p className="font-semibold px-3 py-2 rounded hover:bg-gray-700">{user.name}</p>
+              <Link to="/profile" className="block px-3 py-2 rounded hover:bg-gray-700">
+                <p className="font-semibold">{user.name}</p>
+              </Link>
               <button
                 onClick={() => {
                   localStorage.removeItem("user");

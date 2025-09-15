@@ -1,19 +1,66 @@
-
-
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import axios from "axios";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
-    const storedCart = localStorage.getItem("cart");
-    if (storedCart) {
-      setCartItems(JSON.parse(storedCart));
-    }
+    // Fetch cart items from the server
+    const fetchCartItems = async () => {
+      try {
+        const response = await axios.get("http://localhost:5001/cartItems");
+        setCartItems(response.data);
+      } catch (error) {
+        console.error("Error fetching cart items:", error);
+      }
+    };
+    fetchCartItems();
   }, []);
 
-  const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+  useEffect(() => {
+    // Recalculate total whenever cartItems change
+    const newTotal = cartItems.reduce((sum, item) => sum + item.totalPrice, 0);
+    setTotal(newTotal);
+  }, [cartItems]);
+
+  const handleRemoveFromCart = async (idToRemove) => {
+    const itemToRemove = cartItems.find(item => item.id === idToRemove);
+    if (!itemToRemove) {
+      return;
+    }
+
+    try {
+      if (itemToRemove.quantity > 1) {
+        // Decrease quantity and update totalPrice
+        const newQuantity = itemToRemove.quantity - 1;
+        const newTotalPrice = itemToRemove.totalPrice - itemToRemove.originalPrice;
+
+        await axios.patch(`http://localhost:5001/cartItems/${idToRemove}`, {
+          quantity: newQuantity,
+          totalPrice: newTotalPrice,
+        });
+
+        // Update state to reflect the change
+        setCartItems(
+          cartItems.map(item =>
+            item.id === idToRemove
+              ? { ...item, quantity: newQuantity, totalPrice: newTotalPrice }
+              : item
+          )
+        );
+      } else {
+        // Remove item from the server if quantity is 1
+        await axios.delete(`http://localhost:5001/cartItems/${idToRemove}`);
+
+        // Update state by filtering out the removed item
+        setCartItems(cartItems.filter(item => item.id !== idToRemove));
+      }
+    } catch (error) {
+      console.error("Error removing item from cart:", error);
+    }
+  };
 
   return (
     <div>
@@ -36,8 +83,15 @@ function Cart() {
                 />
                 <div className="p-4">
                   <h2 className="text-lg font-semibold">{item.name}</h2>
-                  <p className="text-red-600 font-bold">₹{item.price}</p>
+                  <p className="text-sm text-gray-600">Quantity: {item.quantity}</p>
+                  <p className="text-red-600 font-bold">₹{item.totalPrice}</p>
                   <p className="text-sm text-gray-600">Category: {item.category}</p>
+                  <button
+                    onClick={() => handleRemoveFromCart(item.id)}
+                    className="mt-3 w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition"
+                  >
+                    Remove from Cart
+                  </button>
                 </div>
               </div>
             ))}
@@ -46,6 +100,9 @@ function Cart() {
         {cartItems.length > 0 && (
           <div className="mt-6 text-right">
             <h2 className="text-xl font-bold">Total: ₹{total}</h2>
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
+              Place order at ₹{total}
+            </button>
           </div>
         )}
       </div>
