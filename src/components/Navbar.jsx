@@ -41,40 +41,10 @@ function Navbar() {
 
       {user && (user.role === "admin" || user.role === "seller") && (
         <div className="flex items-center space-x-8">
-          <Link to="/add-product" className="hover:underline">Add Product</Link>
-          {!isCartPage && (
-            <div className="relative group cursor-pointer">
-              <span className="hover:underline">Categories</span>
-              <div className="absolute left-0 mt-0 w-48 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">
-                <button
-                  onClick={() =>
-                    window.dispatchEvent(new CustomEvent("categorySelected", { detail: "All" }))
-                  }
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-                >
-                  All
-                </button>
-                <button
-                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Sport Shoes" }))}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-                >
-                  Sport Shoes
-                </button>
-                <button
-                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Casual Shoes" }))}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-                >
-                  Casual Shoes
-                </button>
-                <button
-                  onClick={() => window.dispatchEvent(new CustomEvent("categorySelected", { detail: "Basketball Shoes" }))}
-                  className="block w-full text-left px-4 py-2 hover:bg-gray-700 rounded"
-                >
-                  Basketball Shoes
-                </button>
-              </div>
-            </div>
-          )}
+        <Link to="/admin">
+        <h1 className="font-bold">Admin Dashboard</h1>
+      </Link>
+      
           <div className="relative group cursor-pointer">
             <span className="hover:underline">Profile</span>
             <div className="absolute right-0 mt-0 w-56 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">

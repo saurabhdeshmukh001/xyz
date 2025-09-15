@@ -7,6 +7,8 @@ import Home from "./Pages/Home";
 import Admin from "./Pages/admin";
 import Cart from "./Pages/Cart";
 import ProfileManage from "./Pages/ProfileManage"; // Import the new component
+import ProductManagement from "./Pages/ProductManagement";
+import UserProfileManagement from "./Pages/UserProfileManagement";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/profile" element={<ProfileManage />} /> {/* Add this new route */}
+        <Route path="/manage-products" element={<ProductManagement />} />
+        <Route path="/manage-users" element={<UserProfileManagement />} />
       </Routes>
     </Router>
   );
