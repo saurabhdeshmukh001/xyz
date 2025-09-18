@@ -7,7 +7,7 @@
       "phone": "9424782368",
       "password": "customer123",
       "role": "customer",
-      "address": "kiidad"
+      "address": "hff"
     },
     {
       "id": "2",
@@ -15,6 +15,14 @@
       "name": "Seller",
       "password": "seller123",
       "role": "seller"
+    },
+    {
+      "id": "576e",
+      "name": "Saurabh",
+      "phone": "8530274378",
+      "email": "saurabh@gmail.com",
+      "password": "saurabh123",
+      "role": "customer"
     }
   ],
   "products": [
@@ -155,7 +163,7 @@
       "totalPrice": 12999,
       "shippingAddress": "Kailas pg",
       "paymentMethod": "COD",
-      "status": "Processing",
+      "status": "Shipped",
       "orderDate": "2025-09-17T16:38:27.351Z",
       "trackingNumber": "TRACK-904214"
     },
@@ -209,9 +217,63 @@
       "totalPrice": 9999,
       "shippingAddress": "kiidad",
       "paymentMethod": "Card",
-      "status": "Processing",
+      "status": "Shipped",
       "orderDate": "2025-09-18T03:32:41.098Z",
       "trackingNumber": "TRACK-466369"
+    },
+    {
+      "id": "5fac",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "8",
+          "name": "Air Jordan 1",
+          "price": 9999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 9999,
+      "shippingAddress": "ada",
+      "paymentMethod": "Card",
+      "status": "Processing",
+      "orderDate": "2025-09-18T04:06:21.756Z",
+      "trackingNumber": "TRACK-358101"
+    },
+    {
+      "id": "5567",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "9",
+          "name": "Adidas Ultraboost",
+          "price": 12999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 12999,
+      "shippingAddress": "jdaj",
+      "paymentMethod": "UPI",
+      "status": "Processing",
+      "orderDate": "2025-09-18T04:39:18.441Z",
+      "trackingNumber": "TRACK-446517"
+    },
+    {
+      "id": "5006",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "9",
+          "name": "Adidas Ultraboost",
+          "price": 12999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 12999,
+      "shippingAddress": "hff",
+      "paymentMethod": "Card",
+      "status": "Processing",
+      "orderDate": "2025-09-18T05:21:07.618Z",
+      "trackingNumber": "TRACK-85173"
     }
   ]
 }

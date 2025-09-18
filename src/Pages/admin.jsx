@@ -1,20 +1,27 @@
+// pages/Admin.jsx
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 import { useNavigate } from "react-router-dom";
 
-// Import the ProductManagement component
+// Import admin components
 import ProductManagement from "./ProductManagement";
-
-// Import the UserProfileManagement component
 import UserProfileManagement from "./UserProfileManagement";
 import AdminOverview from "./AdminOverview";
+import OrderTrackingAdmin from "./OrderTrackingAdmin"; // Import the new component
 
 function Admin() {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("Overview"); // State to manage active tab
+  const [activeTab, setActiveTab] = useState("Overview");
+
+  // Authentication check (optional, but good practice)
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (!storedUser || storedUser.role !== 'seller') {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   return (
     <div className="relative min-h-screen w-full bg-gray-100">
@@ -59,20 +66,13 @@ function Admin() {
 
         {/* Content based on active tab */}
         <div className="max-w-6xl mx-auto">
-          {activeTab === "Overview" && (
-           <AdminOverview/>
-          )}
+          {activeTab === "Overview" && <AdminOverview />}
           {activeTab === "Products" && <ProductManagement />}
-          {activeTab === "Orders" && (
-            <div className="bg-white p-8 rounded-lg shadow-md text-center">
-              <h2 className="text-2xl font-semibold mb-4">Order Tracking</h2>
-              <p className="text-gray-700">Content for tracking and updating order statuses will be added here.</p>
-            </div>
-          )}
+          {activeTab === "Orders" && <OrderTrackingAdmin />} {/* Render the new component here */}
           {activeTab === "Customers" && <UserProfileManagement />}
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 }

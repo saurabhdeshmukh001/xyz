@@ -1,26 +1,48 @@
 // pages/OrderTracking.jsx
-import React from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 function OrderTracking() {
     const { orderId } = useParams();
-    const location = useLocation();
-    const { order } = location.state || {};
-    
-    // In a real application, you would fetch the latest order status from the server
-    // For this simulation, we'll use the data passed from the confirmation page.
+    const [order, setOrder] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
 
-    if (!order) {
-        return <div className="text-center mt-20">No order details found.</div>;
+    useEffect(() => {
+        const fetchOrder = async () => {
+            try {
+                // Fetch the order from db.json using the orderId from the URL
+                const response = await axios.get(`http://localhost:5001/orders/${orderId}`);
+                setOrder(response.data);
+                setLoading(false);
+            } catch (err) {
+                console.error("Error fetching order details:", err);
+                setError('Order not found or an error occurred.');
+                setLoading(false);
+            }
+        };
+
+        if (orderId) {
+            fetchOrder();
+        }
+    }, [orderId]);
+
+    if (loading) {
+        return <div className="text-center mt-20">Loading order details...</div>;
+    }
+
+    if (error) {
+        return <div className="text-center mt-20 text-red-500">{error}</div>;
     }
 
     const trackingSteps = [
-        { status: 'Confirmed', date: order.orderDate, isComplete: true },
-        { status: 'Processing', date: '...', isComplete: order.status === 'Processing' || order.status === 'Shipped' || order.status === 'Delivered' },
-        { status: 'Shipped', date: '...', isComplete: order.status === 'Shipped' || order.status === 'Delivered' },
-        { status: 'Delivered', date: '...', isComplete: order.status === 'Delivered' },
+        { status: 'Confirmed', isComplete: true },
+        { status: 'Processing', isComplete: order.status === 'Processing' || order.status === 'Shipped' || order.status === 'Delivered' },
+        { status: 'Shipped', isComplete: order.status === 'Shipped' || order.status === 'Delivered' },
+        { status: 'Delivered', isComplete: order.status === 'Delivered' },
     ];
 
     return (
@@ -29,7 +51,7 @@ function OrderTracking() {
             <div className="container mx-auto p-10 mt-16 max-w-2xl text-center">
                 <div className="bg-white p-8 rounded-lg shadow-lg">
                     <h1 className="text-3xl font-bold mb-6">Order Tracking</h1>
-                    <p className="mb-4"><strong>Order ID:</strong> {orderId}</p>
+                    <p className="mb-4"><strong>Order ID:</strong> {order.id}</p>
                     <p className="mb-6"><strong>Tracking Number:</strong> {order.trackingNumber}</p>
                     
                     <div className="flex justify-between items-center relative my-8">
@@ -54,7 +76,7 @@ function OrderTracking() {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
+            <Footer />
         </div>
     );
 }
