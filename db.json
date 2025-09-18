@@ -7,7 +7,7 @@
       "phone": "9424782368",
       "password": "customer123",
       "role": "customer",
-      "address": "Bhopal"
+      "address": "Jammu"
     },
     {
       "id": "2",
@@ -149,13 +149,24 @@
   ],
   "cartItems": [
     {
-      "id": "a581",
+      "id": "000a",
       "productId": "9",
       "name": "Adidas Ultraboost",
       "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "category": "Running Shoes",
       "originalPrice": 12999,
-      "totalPrice": 12999,
+      "totalPrice": 25998,
+      "quantity": 2
+    },
+    {
+      "id": "d5a5",
+      "productId": "13",
+      "name": "New Balance 990v5",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Running Shoes",
+      "size": 8,
+      "originalPrice": 18500,
+      "totalPrice": 18500,
       "quantity": 1
     }
   ],
@@ -321,6 +332,100 @@
       "status": "Processing",
       "orderDate": "2025-09-18T06:59:31.763Z",
       "trackingNumber": "TRACK-145554"
+    },
+    {
+      "id": "21fb",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "14",
+          "name": "Vans Old Skool",
+          "price": 4800,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 4800,
+      "shippingAddress": "lknl",
+      "paymentMethod": "Card",
+      "status": "Processing",
+      "orderDate": "2025-09-18T10:52:16.147Z",
+      "trackingNumber": "TRACK-910785"
+    },
+    {
+      "id": "8899",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "9",
+          "name": "Adidas Ultraboost",
+          "price": 12999,
+          "quantity": 1,
+          "size": "N/A"
+        }
+      ],
+      "totalPrice": 12999,
+      "shippingAddress": "pune",
+      "paymentMethod": "UPI",
+      "status": "Processing",
+      "orderDate": "2025-09-18T11:33:44.463Z",
+      "trackingNumber": "TRACK-61711"
+    },
+    {
+      "id": "2fc1",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "8",
+          "name": "Air Jordan 1",
+          "price": 9999,
+          "quantity": 1,
+          "size": "N/A"
+        }
+      ],
+      "totalPrice": 9999,
+      "shippingAddress": "Pune",
+      "paymentMethod": "Credit/Debit Card",
+      "status": "Processing",
+      "orderDate": "2025-09-18T12:11:56.245Z",
+      "trackingNumber": "TRACK-849645"
+    },
+    {
+      "id": "a77f",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "13",
+          "name": "New Balance 990v5",
+          "price": 18500,
+          "quantity": 1,
+          "size": "N/A"
+        }
+      ],
+      "totalPrice": 18500,
+      "shippingAddress": "Jammu",
+      "paymentMethod": "Credit/Debit Card",
+      "status": "Processing",
+      "orderDate": "2025-09-18T12:12:13.354Z",
+      "trackingNumber": "TRACK-585294"
+    },
+    {
+      "id": "5a37",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "9",
+          "name": "Adidas Ultraboost",
+          "price": 12999,
+          "quantity": 1,
+          "size": "N/A"
+        }
+      ],
+      "totalPrice": 12999,
+      "shippingAddress": "Jammu",
+      "paymentMethod": "UPI",
+      "status": "Processing",
+      "orderDate": "2025-09-18T12:17:39.512Z",
+      "trackingNumber": "TRACK-23729"
     }
   ]
 }
