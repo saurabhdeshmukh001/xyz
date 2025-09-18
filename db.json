@@ -2,11 +2,12 @@
   "users": [
     {
       "id": "1",
-      "email": "customer@example.com",
-      "name": "Customer",
+      "email": "customer1@example.com",
+      "name": "Customer1",
       "phone": "9424782368",
       "password": "customer123",
-      "role": "customer"
+      "role": "customer",
+      "address": "kiidad"
     },
     {
       "id": "2",
@@ -18,58 +19,199 @@
   ],
   "products": [
     {
-      "id": "3",
-      "name": "Sneaker Gamma",
-      "price": 4999,
-      "description": "Stylish sneaker for daily wear",
-      "image": "https://via.placeholder.com/300x200",
-      "category": "Basketball Shoes"
-    },
-    {
-      "id": "5",
-      "name": "Adidas Ultraboost",
-      "price": 8499,
-      "description": "High-performance running sneakers with superior cushioning.",
-      "image": "https://via.placeholder.com/300x200",
-      "category": "Sport Shoes"
-    },
-    {
       "id": "7",
       "name": "Air Jordan 1",
       "price": 9999,
       "description": "Iconic basketball sneakers with premium design.",
-      "image": "https://via.placeholder.com/300x200",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "category": "Basketball Shoes"
     },
     {
       "id": "8",
-      "name": "Reebok Classic Leather",
-      "price": 3599,
-      "description": "Timeless leather sneakers with casual style.",
-      "image": "https://via.placeholder.com/300x200",
-      "category": "Casual Shoes"
-    }
-  ],
-  "cartItems": [
-    {
-      "id": "07cd",
-      "productId": 3,
-      "name": "Sneaker Gamma",
-      "image": "https://via.placeholder.com/300x200",
-      "category": "Basketball Shoes",
-      "originalPrice": 4999,
-      "totalPrice": 9998,
-      "quantity": 2
+      "name": "Air Jordan 1",
+      "price": 9999,
+      "description": "Iconic basketball sneakers with premium design.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Basketball Shoes"
     },
     {
-      "id": "8df7",
-      "productId": 7,
-      "name": "Air Jordan 1",
-      "image": "https://via.placeholder.com/300x200",
-      "category": "Basketball Shoes",
-      "originalPrice": 9999,
+      "id": "9",
+      "name": "Adidas Ultraboost",
+      "price": 12999,
+      "description": "Running sneakers with responsive cushioning.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Running Shoes"
+    },
+    {
+      "id": "10",
+      "name": "Converse All Star",
+      "price": 3500,
+      "description": "Classic canvas high-top sneakers for casual wear.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": "11",
+      "name": "Nike Air Force 1",
+      "price": 8999,
+      "description": "Timeless style and comfort in a low-cut design.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": "12",
+      "name": "Puma Suede Classic",
+      "price": 6500,
+      "description": "Iconic suede sneakers with a retro feel.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": "13",
+      "name": "New Balance 990v5",
+      "price": 18500,
+      "description": "Premium running shoes with superior support and durability.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Running Shoes"
+    },
+    {
+      "id": "14",
+      "name": "Vans Old Skool",
+      "price": 4800,
+      "description": "Classic skate sneakers with a side stripe design.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Skate Shoes"
+    },
+    {
+      "id": "15",
+      "name": "Nike Dunk Low",
+      "price": 10500,
+      "description": "Iconic basketball shoe with street-style flair.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Basketball Shoes"
+    },
+    {
+      "id": "16",
+      "name": "Adidas Stan Smith",
+      "price": 7200,
+      "description": "Clean, classic tennis shoe silhouette.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": "17",
+      "name": "Reebok Club C 85",
+      "price": 6800,
+      "description": "Vintage tennis style with modern comfort.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": "18",
+      "name": "Nike Cortez",
+      "price": 7800,
+      "description": "The original Nike running shoe, a classic since 1972.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Running Shoes"
+    },
+    {
+      "id": "19",
+      "name": "Asics Gel-Kayano",
+      "price": 14500,
+      "description": "Stability running shoe designed for long distances.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Running Shoes"
+    },
+    {
+      "id": "20",
+      "name": "Converse Chuck 70",
+      "price": 4200,
+      "description": "A refined, vintage version of the classic All Star.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Casual Shoes"
+    },
+    {
+      "id": "21",
+      "name": "Vans Sk8-Hi",
+      "price": 5500,
+      "description": "High-top skate shoe with a durable canvas and suede upper.",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Skate Shoes"
+    }
+  ],
+  "cartItems": [],
+  "orders": [
+    {
+      "id": "772d",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "9",
+          "name": "Adidas Ultraboost",
+          "price": 12999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 12999,
+      "shippingAddress": "Kailas pg",
+      "paymentMethod": "COD",
+      "status": "Processing",
+      "orderDate": "2025-09-17T16:38:27.351Z",
+      "trackingNumber": "TRACK-904214"
+    },
+    {
+      "id": "9c46",
+      "userId": "1",
+      "products": [
+        {
+          "productId": 3,
+          "name": "Sneaker Gamma",
+          "price": 4999,
+          "quantity": 1
+        },
+        {
+          "productId": 7,
+          "name": "Air Jordan 1",
+          "price": 9999,
+          "quantity": 1
+        },
+        {
+          "productId": "11",
+          "name": "Nike Air Force 1",
+          "price": 8999,
+          "quantity": 1
+        },
+        {
+          "productId": "9",
+          "name": "Adidas Ultraboost",
+          "price": 12999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 36996,
+      "shippingAddress": "piyush home",
+      "paymentMethod": "Card",
+      "status": "Processing",
+      "orderDate": "2025-09-17T17:54:19.401Z",
+      "trackingNumber": "TRACK-437982"
+    },
+    {
+      "id": "7478",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "7",
+          "name": "Air Jordan 1",
+          "price": 9999,
+          "quantity": 1
+        }
+      ],
       "totalPrice": 9999,
-      "quantity": 1
+      "shippingAddress": "kiidad",
+      "paymentMethod": "Card",
+      "status": "Processing",
+      "orderDate": "2025-09-18T03:32:41.098Z",
+      "trackingNumber": "TRACK-466369"
     }
   ]
 }

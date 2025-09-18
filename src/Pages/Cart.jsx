@@ -1,8 +1,11 @@
+// pages/Cart.jsx
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Navbar from "../components/Navbar";
 import axios from "axios";
 
 function Cart() {
+  const navigate = useNavigate(); // Initialize navigate
   const [cartItems, setCartItems] = useState([]);
   const [total, setTotal] = useState(0);
 
@@ -62,6 +65,11 @@ function Cart() {
     }
   };
 
+  const handlePlaceOrder = () => {
+    // Navigate to the checkout page, passing all cart items and the total
+    navigate('/checkout', { state: { cartItems, total } });
+  };
+
   return (
     <div>
       <Navbar />
@@ -100,7 +108,10 @@ function Cart() {
         {cartItems.length > 0 && (
           <div className="mt-6 text-right">
             <h2 className="text-xl font-bold">Total: ₹{total}</h2>
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4">
+            <button 
+              onClick={handlePlaceOrder}
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4"
+            >
               Place order at ₹{total}
             </button>
           </div>

@@ -9,6 +9,13 @@ import Cart from "./Pages/Cart";
 import ProfileManage from "./Pages/ProfileManage"; // Import the new component
 import ProductManagement from "./Pages/ProductManagement";
 import UserProfileManagement from "./Pages/UserProfileManagement";
+import ProductDetails from "./Pages/ProductDetails";
+import CheckoutPage from "./Pages/CheckoutPage";
+import OrderConfirmation from "./Pages/OrderConfirmation";
+import OrderTracking from "./Pages/OrderTracking"
+
+
+
 
 function App() {
   return (
@@ -24,6 +31,11 @@ function App() {
         <Route path="/profile" element={<ProfileManage />} /> {/* Add this new route */}
         <Route path="/manage-products" element={<ProductManagement />} />
         <Route path="/manage-users" element={<UserProfileManagement />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+         <Route path="/checkout" element={<CheckoutPage/> } />
+        <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
+        <Route path="/order-tracking/:orderId" element={<OrderTracking />} />
+
       </Routes>
     </Router>
   );

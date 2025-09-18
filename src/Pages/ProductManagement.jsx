@@ -45,7 +45,7 @@ const ProductManagement = () => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      <Navbar />
+      
       <div className="relative flex flex-col items-center justify-start pt-20 min-h-screen z-10 w-full px-4">
         <div className="w-full max-w-5xl bg-black/40 backdrop-blur-md shadow-xl rounded-2xl p-8 text-white">
           <h1 className="text-3xl font-bold mb-8 text-center">Product Management</h1>
