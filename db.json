@@ -7,7 +7,7 @@
       "phone": "9424782368",
       "password": "customer123",
       "role": "customer",
-      "address": "hff"
+      "address": "Bhopal"
     },
     {
       "id": "2",
@@ -147,7 +147,18 @@
       "category": "Skate Shoes"
     }
   ],
-  "cartItems": [],
+  "cartItems": [
+    {
+      "id": "a581",
+      "productId": "9",
+      "name": "Adidas Ultraboost",
+      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "category": "Running Shoes",
+      "originalPrice": 12999,
+      "totalPrice": 12999,
+      "quantity": 1
+    }
+  ],
   "orders": [
     {
       "id": "772d",
@@ -274,6 +285,42 @@
       "status": "Processing",
       "orderDate": "2025-09-18T05:21:07.618Z",
       "trackingNumber": "TRACK-85173"
+    },
+    {
+      "id": "3e30",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "9",
+          "name": "Adidas Ultraboost",
+          "price": 12999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 12999,
+      "shippingAddress": "hgh",
+      "paymentMethod": "Card",
+      "status": "Processing",
+      "orderDate": "2025-09-18T06:50:59.935Z",
+      "trackingNumber": "TRACK-50208"
+    },
+    {
+      "id": "4f0f",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "7",
+          "name": "Air Jordan 1",
+          "price": 9999,
+          "quantity": 1
+        }
+      ],
+      "totalPrice": 9999,
+      "shippingAddress": "Bhopal",
+      "paymentMethod": "UPI",
+      "status": "Processing",
+      "orderDate": "2025-09-18T06:59:31.763Z",
+      "trackingNumber": "TRACK-145554"
     }
   ]
 }
