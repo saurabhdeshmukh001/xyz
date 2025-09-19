@@ -1,103 +1,115 @@
+// pages/UserProfileManagement.jsx (Edit Functionality Removed)
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for potential future use
+import { useNavigate } from "react-router-dom"; 
+import { FiUsers, FiTrash2, FiX } from 'react-icons/fi'; // Removed FiEdit2
 
 const UserProfileManagement = () => {
-  const navigate = useNavigate(); // Initialize navigate hook
-  const [users, setUsers] = useState([]);
-  const [successMessage, setSuccessMessage] = useState("");
+    const navigate = useNavigate();
+    const [users, setUsers] = useState([]);
+    const [successMessage, setSuccessMessage] = useState("");
+    const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    axios.get("http://localhost:5001/users")
-      .then((response) => {
-        const filteredUsers = response.data.filter(user => user.role === "customer");
-        setUsers(filteredUsers);
-      })
-      .catch((error) => {
-        console.error("Error fetching users:", error);
-      });
-  }, []);
+    useEffect(() => {
+        axios.get("http://localhost:5001/users")
+            .then((response) => {
+                const filteredUsers = response.data.filter(user => user.role === "customer");
+                setUsers(filteredUsers);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching users:", error);
+                setLoading(false);
+            });
+    }, []);
 
-  const handleEdit = (id) => {
-    // This is a placeholder. You could use navigate here to go to an edit page.
-    alert(`Edit user with id: ${id}`);
-  };
+    // NOTE: handleEdit function removed as requested
 
-  const handleDelete = (id) => {
-    axios.delete(`http://localhost:5001/users/${id}`)
-      .then(() => {
-        setUsers(users.filter(user => user.id !== id));
-        setSuccessMessage("User deleted successfully!");
-        setTimeout(() => setSuccessMessage(""), 2000); // 2-second timeout
-      })
-      .catch((error) => {
-        console.error("Error deleting user:", error);
-      });
-  };
+    const handleDelete = (id) => {
+        if (!window.confirm("Are you sure you want to delete this user?")) return;
+        
+        axios.delete(`http://localhost:5001/users/${id}`)
+            .then(() => {
+                setUsers(users.filter(user => user.id !== id));
+                setSuccessMessage("User deleted successfully!");
+                setTimeout(() => setSuccessMessage(""), 3000);
+            })
+            .catch((error) => {
+                console.error("Error deleting user:", error);
+                setSuccessMessage("Error deleting user.");
+                setTimeout(() => setSuccessMessage(""), 3000);
+            });
+    };
 
-  return (
-    <div className="relative h-screen w-full overflow-hidden">
-      {/* The `Navbar` component should be outside the main content container */}
-      {/* <Navbar /> */}
+    if (loading) {
+        return <div className="p-8 text-center text-gray-700">Loading customer data...</div>;
+    }
 
-      <div className="relative flex flex-col items-center justify-start pt-20 min-h-screen z-10 w-full px-4">
-        {/* Fixed success message alert */}
-        {successMessage && (
-          <div className="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg z-50 flex items-center justify-between space-x-4 animate-fade-in-down">
-            <span>{successMessage}</span>
-            <button
-              onClick={() => setSuccessMessage("")}
-              className="text-white font-bold hover:text-gray-200"
-            >
-              &times;
-            </button>
-          </div>
-        )}
+    return (
+        <div className="p-4 sm:p-8 bg-gray-50 min-h-screen">
+            <div className="max-w-7xl mx-auto">
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-3">
+                    Customer User Management <FiUsers className="inline text-teal-600 mb-1" />
+                </h1>
 
-        {/* Main Content Container with consistent styling */}
-        <div className="w-full max-w-5xl bg-black/40 backdrop-blur-md shadow-xl rounded-2xl p-8 text-white">
-          <h1 className="text-3xl font-bold mb-8 text-center">User Profile Management</h1>
-          
-          <div className="overflow-x-auto max-h-96 overflow-y-auto">
-            <table className="min-w-full rounded-lg overflow-hidden">
-              <thead>
-                <tr className="bg-black/50 border-b border-gray-700">
-                  <th className="py-3 px-6 text-left font-semibold border-gray-700">Name</th>
-                  <th className="py-3 px-6 text-left font-semibold border-gray-700">Email</th>
-                  <th className="py-3 px-6 text-left font-semibold border-gray-700">Role</th>
-                  <th className="py-3 px-6 text-left font-semibold border-gray-700">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {users.map(({ id, name, email, role }) => (
-                  <tr key={id} className="bg-black/30 border-b border-gray-700 hover:bg-black/60 transition">
-                    <td className="py-3 px-6 border-gray-700">{name}</td>
-                    <td className="py-3 px-6 border-gray-700">{email}</td>
-                    <td className="py-3 px-6 border-gray-700">{role}</td>
-                    <td className="py-3 px-6 border-gray-700 space-x-2">
-                      <button
-                        onClick={() => handleEdit(id)}
-                        className="px-3 py-1 bg-yellow-500 rounded hover:bg-yellow-600 text-black font-semibold transition"
-                      >
-                        Edit
-                      </button>
-                      <button
-                        onClick={() => handleDelete(id)}
-                        className="px-3 py-1 bg-red-600 rounded hover:bg-red-700 text-white font-semibold transition"
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                {/* Success Message Alert (Centered and prominent) */}
+                {successMessage && (
+                    <div className="fixed top-5 left-1/2 transform -translate-x-1/2 bg-green-600 text-white px-6 py-3 rounded-lg shadow-xl z-50 flex items-center space-x-3 transition duration-300">
+                        <span>{successMessage}</span>
+                        <button onClick={() => setSuccessMessage("")} className="text-white hover:text-gray-200">
+                            <FiX />
+                        </button>
+                    </div>
+                )}
+
+                {/* User Table Card */}
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div className="overflow-x-auto">
+                        <table className="min-w-full divide-y divide-gray-200">
+                            <thead className="bg-gray-50">
+                                <tr>
+                                    {/* Removed 'ID' for cleaner display, keeping Name, Email, Role, Actions */}
+                                    {['Name', 'Email', 'Role', 'Actions'].map((header) => (
+                                        <th key={header} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                            {header}
+                                        </th>
+                                    ))}
+                                </tr>
+                            </thead>
+                            <tbody className="bg-white divide-y divide-gray-200">
+                                {users.map(({ id, name, email, role }) => (
+                                    <tr key={id} className="hover:bg-gray-50 transition duration-150">
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">{name}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{email}</td>
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm">
+                                            <span className="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                                {role}
+                                            </span>
+                                        </td>
+                                        <td className="px-6 py-4 whitespace-nowrap text-sm space-x-2">
+                                            {/* Only Delete button remains */}
+                                            <button
+                                                onClick={() => handleDelete(id)}
+                                                className="text-red-600 hover:text-red-800 transition"
+                                                title="Delete User"
+                                            >
+                                                <FiTrash2 className="w-5 h-5 inline" />
+                                                <span className="ml-1 hidden sm:inline">Delete</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div className="mt-6 text-center text-sm text-gray-500">
+                    Total active customer profiles: {users.length}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default UserProfileManagement;

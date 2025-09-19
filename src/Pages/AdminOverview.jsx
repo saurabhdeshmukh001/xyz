@@ -1,115 +1,185 @@
 import React from 'react';
+import { FiDollarSign, FiShoppingCart, FiPackage, FiUsers, FiClock, FiAlertTriangle, FiSettings, FiBarChart2 } from 'react-icons/fi';
+// NOTE: I am replacing the inline SVG definitions with imports from 'react-icons/fi' 
+// for simplicity and correct paths. You will need to run 'npm install react-icons' 
+// to use this code without errors. If you cannot install, replace FiXxx with 
+// simple div/text placeholders or use the corrected inline SVGs below.
 
-// Inline SVG icons
-const DollarIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="none" className="w-6 h-6">
-        <path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22Zm1.8 14.5a.8.8 0 0 1-.8.8H12a2.8 2.8 0 0 1-2.8-2.8V9.5a.8.8 0 0 1 .8-.8h1a.8.8 0 0 1 .8.8V12a1.8 1.8 0 0 0 1.8 1.8h.2a.8.8 0 0 1 0 1.6ZM13.2 8.5a.8.8 0 0 1-.8-.8V6.2a.8.8 0 0 1 .8-.8h1a.8.8 0 0 1 .8.8v1.5a.8.8 0 0 1-.8.8Z" />
+// --- OPTIONAL: If you CANNOT install react-icons, use these corrected SVGs ---
+const DollarIcon = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-2-1v-2h4v2m-4 0v-2h4m-4 0a4 4 0 0 0 8 0v-2a4 4 0 0 0-8 0m-4 0a4 4 0 0 1 8 0v-2a4 4 0 0 1-8 0" />
+    </svg>
+);
+const ShoppingCartIcon = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.023.824l.798 4.792a3 3 0 0 0 2.493 2.527l9.746.541a3 3 0 0 0 2.493-2.527l.798-4.792c.068-.481.513-.824 1.023-.824H21m-2.5 14.25a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM13.5 16.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+    </svg>
+);
+const BoxIcon = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.5M5 7.5l.625 10.5m1.5-12h11.25m-6.75 6.75l-4.75 4.75M12 12.75h.008v.008H12v-.008ZM12 18.75h.008v.008H12v-.008ZM6.375 14.25l-.168 1.008c-.287 1.25.753 2.536 2.078 2.536h12.336c1.325 0 2.365-1.286 2.078-2.536l-.168-1.008M6.375 14.25H4.281l-.145.869c-.198 1.18.59 2.378 1.768 2.378h13.25c1.178 0 1.966-1.198 1.768-2.378l-.145-.869H17.625" />
+    </svg>
+);
+const UsersIcon = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17.982 4.743A9.75 9.75 0 0 1 12 19.5c-4.142 0-7.756-2.613-9.155-6.236m18.31 0c-1.399 3.623-5.013 6.236-9.155 6.236m-.918-16.5a12.72 12.72 0 0 1 10.933 6.55m-10.933-6.55A12.72 12.72 0 0 0 12 14.25M12 6.75a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+    </svg>
+);
+const ClockIcon = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 9a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    </svg>
+);
+const ExclamationTriangleIcon = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.3 9.3c.797 0 1.57-.308 2.147-.852l7.006-6.877c.4-.4.92-.622 1.458-.622s1.058.222 1.458.622l7.006 6.877c.577.544 1.35.852 2.147.852h1.5A.75.75 0 0 0 22.5 21v-3.324a.75.75 0 0 0-.214-.528l-7.25-7.085c-.45-.45-.45-1.18 0-1.63L21.786 5.25a.75.75 0 0 0 .214-.528V2.25A.75.75 0 0 0 21.324 1.5H2.676A.75.75 0 0 0 2 2.25v2.472c0 .204.081.4.214.528l7.25 7.085c.45.45.45 1.18 0 1.63L2.214 20.147a.75.75 0 0 0-.214.528v3.324A.75.75 0 0 0 3.3 21.75Z" />
+    </svg>
+);
+const CogIcon = (props) => (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" {...props}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.018a.75.75 0 0 1 .436-.889L12 1.5l1.97.629a.75.75 0 0 1 .436.89l-.265 1.325a.75.75 0 0 0 .521.841l1.325.265a.75.75 0 0 1 .89.436L22.5 12l-.629 1.97a.75.75 0 0 1-.89.436l-1.325-.265a.75.75 0 0 0-.841.521l-.265 1.325a.75.75 0 0 1-.436.89L12 22.5l-1.97-.629a.75.75 0 0 1-.436-.89l.265-1.325a.75.75 0 0 0-.521-.841l-1.325-.265a.75.75 0 0 1-.89-.436L1.5 12l.629-1.97a.75.75 0 0 1 .89-.436l1.325.265a.75.75 0 0 0 .841-.521l.265-1.325a.75.75 0 0 1 .436-.89ZM12 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Z" />
     </svg>
 );
 
-const ShoppingCartIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="none" className="w-6 h-6">
-        <path d="M17.47 16.47a.75.75 0 0 1 .78.11l.24.23a.75.75 0 0 1 .09.91l-1.5 2.5a.75.75 0 0 1-1.3-.85l.77-1.28ZM6.53 16.47a.75.75 0 0 1-.11.78l-.23.24a.75.75 0 0 1-.91.09l-2.5-1.5a.75.75 0 0 1 .85-1.3l1.28.77ZM4.5 13.5a1.5 1.5 0 0 1 1.5-1.5h12a1.5 1.5 0 0 1 1.5 1.5l.5 3.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5Zm15.5-1.5a1.5 1.5 0 0 1-1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5h-9A1.5 1.5 0 0 0 6 6v4.5a1.5 1.5 0 0 1-3 0V6a4.5 4.5 0 0 1 4.5-4.5h9A4.5 4.5 0 0 1 21 6v4.5a1.5 1.5 0 0 1-1.5 1.5ZM8 8.5a.5.5 0 0 1 1 0v4a.5.5 0 0 1-1 0Zm8 0a.5.5 0 0 1 1 0v4a.5.5 0 0 1-1 0Z" />
-    </svg>
-);
+// We'll use these simplified icons in the final component for safety
+const DollarIcon_Simple = (props) => <DollarIcon className="w-6 h-6" {...props} />;
+const ShoppingCartIcon_Simple = (props) => <ShoppingCartIcon className="w-6 h-6" {...props} />;
+const BoxIcon_Simple = (props) => <BoxIcon className="w-6 h-6" {...props} />;
+const UsersIcon_Simple = (props) => <UsersIcon className="w-6 h-6" {...props} />;
+const ClockIcon_Simple = (props) => <ClockIcon className="w-6 h-6" {...props} />;
+const ExclamationTriangleIcon_Simple = (props) => <ExclamationTriangleIcon className="w-6 h-6" {...props} />;
+const CogIcon_Simple = (props) => <CogIcon className="w-6 h-6" {...props} />;
 
-const BoxIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="none" className="w-6 h-6">
-        <path d="M12 2a10 10 0 0 0-9.8 12.1A.75.75 0 0 1 2.2 14a.75.75 0 0 1-.2-.5V7a.75.75 0 0 1 .75-.75h18.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-.75.75Z" />
-    </svg>
-);
+// --- END of corrected SVGs ---
 
-const UsersIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="none" className="w-6 h-6">
-        <path d="M12 2a10 10 0 0 0-9.8 12.1A.75.75 0 0 1 2.2 14a.75.75 0 0 1-.2-.5V7a.75.75 0 0 1 .75-.75h18.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-.75.75Z" />
-    </svg>
-);
 
-const ClockIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="none" className="w-6 h-6">
-        <path d="M12 2a10 10 0 0 0-9.8 12.1A.75.75 0 0 1 2.2 14a.75.75 0 0 1-.2-.5V7a.75.75 0 0 1 .75-.75h18.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-.75.75Z" />
-    </svg>
-);
-
-const ExclamationTriangleIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="none" className="w-6 h-6">
-        <path d="M12 2a10 10 0 0 0-9.8 12.1A.75.75 0 0 1 2.2 14a.75.75 0 0 1-.2-.5V7a.75.75 0 0 1 .75-.75h18.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-.75.75Z" />
-    </svg>
-);
-
-const CogIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" strokeWidth={1.5} stroke="none" className="w-6 h-6">
-        <path d="M12 2a10 10 0 0 0-9.8 12.1A.75.75 0 0 1 2.2 14a.75.75 0 0 1-.2-.5V7a.75.75 0 0 1 .75-.75h18.5a.75.75 0 0 1 .75.75v6.5a.75.75 0 0 1-.75.75Z" />
-    </svg>
-);
-
-const AdminOverview = () => {
-    // This data would be fetched from an API
-    const stats = {
-        totalRevenue: { value: '$179.99', change: '+12.5%', icon: <DollarIcon /> },
-        totalOrders: { value: '1', change: '+8.2%', icon: <ShoppingCartIcon /> },
-        products: { value: '15', change: '+3.1%', icon: <BoxIcon /> },
-        customers: { value: '1', change: '+15.3%', icon: <UsersIcon /> },
-    };
-
-    const statusItems = {
-        pendingOrders: { label: 'Pending Orders', value: '0', bgColor: 'bg-amber-100', icon: <ClockIcon /> },
-        lowStockItems: { label: 'Low Stock Items', value: '2', bgColor: 'bg-red-100', icon: <ExclamationTriangleIcon /> },
-    };
+// Reusable Stat Card Component
+const StatCard = ({ title, value, change, icon: IconComponent, color }) => {
+    const changeColor = change.startsWith('+') ? 'text-green-600 bg-green-50' : 'text-red-600 bg-red-50';
 
     return (
-        <div className="p-8 bg-gray-100 min-h-screen">
-            <h1 className="text-3xl font-semibold text-gray-800 mb-6">Admin Dashboard</h1>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-                {Object.keys(stats).map((key) => (
-                    <div key={key} className="flex items-center justify-between p-6 bg-white rounded-xl shadow-md">
-                        <div>
-                            <span className="text-sm font-medium text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1')}</span>
-                            <div className="text-2xl font-bold text-gray-900 mt-1">{stats[key].value}</div>
-                            <div className="text-xs text-green-500 font-semibold mt-1">{stats[key].change}</div>
-                        </div>
-                        <div className="w-12 h-12 flex items-center justify-center bg-blue-500 rounded-full text-white text-xl">
-                            {stats[key].icon}
-                        </div>
-                    </div>
-                ))}
+        <div className="flex items-center justify-between p-6 bg-white rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
+            <div>
+                <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">{title}</span>
+                <div className="text-3xl font-extrabold text-gray-900 mt-1">{value}</div>
+                <div className={`text-xs font-semibold px-2 py-0.5 rounded-full inline-block mt-2 ${changeColor}`}>
+                    {change}
+                </div>
             </div>
+            <div className={`w-14 h-14 flex items-center justify-center ${color} rounded-full text-white text-2xl shadow-lg`}>
+                {IconComponent}
+            </div>
+        </div>
+    );
+};
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className={`${statusItems.pendingOrders.bgColor} p-6 rounded-xl text-center shadow-md`}>
-                    <div className="text-4xl text-yellow-500 mb-2">
-                        {statusItems.pendingOrders.icon}
-                    </div>
-                    <div className="text-sm font-medium text-gray-600">
-                        {statusItems.pendingOrders.label}
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mt-1">
-                        {statusItems.pendingOrders.value}
-                    </div>
+
+// Reusable Status/Action Card Component
+const StatusActionCard = ({ label, value, bgColor, icon: IconComponent, color }) => (
+    <div className={`p-6 rounded-xl text-center shadow-lg border border-gray-200 ${bgColor} transition duration-300 hover:scale-[1.02] cursor-pointer`}>
+        <div className={`text-5xl mx-auto mb-3 ${color}`}>
+            {IconComponent}
+        </div>
+        <div className="text-lg font-bold text-gray-800">
+            {label}
+        </div>
+        {value && (
+            <div className="text-3xl font-extrabold text-gray-900 mt-1">
+                {value}
+            </div>
+        )}
+    </div>
+);
+
+
+const AdminOverview = () => {
+    // --- Data Mockup (using the corrected SVG components) ---
+    const stats = [
+        { title: 'Total Revenue', value: '₹179.99K', change: '+12.5%', icon: <DollarIcon_Simple />, color: 'bg-green-600' },
+        { title: 'Total Orders', value: '1,200', change: '+8.2%', icon: <ShoppingCartIcon_Simple />, color: 'bg-blue-600' },
+        { title: 'Total Products', value: '150', change: '+3.1%', icon: <BoxIcon_Simple />, color: 'bg-indigo-600' },
+        { title: 'Total Customers', value: '850', change: '+15.3%', icon: <UsersIcon_Simple />, color: 'bg-teal-600' },
+    ];
+
+    const statusItems = [
+        { label: 'Pending Orders', value: '12', bgColor: 'bg-amber-50', icon: <ClockIcon_Simple />, color: 'text-amber-600' },
+        { label: 'Low Stock Items', value: '25', bgColor: 'bg-red-50', icon: <ExclamationTriangleIcon_Simple />, color: 'text-red-600' },
+    ];
+
+    // --- Chart Placeholder Data ---
+    const chartPlaceholderData = [
+        { month: 'Jan', sales: 120 }, { month: 'Feb', sales: 150 },
+        { month: 'Mar', sales: 180 }, { month: 'Apr', sales: 220 },
+    ];
+
+
+    return (
+        <div className="p-4 sm:p-8 bg-gray-50 min-h-screen">
+            <div className="max-w-7xl mx-auto">
+                
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-3">Dashboard Overview 📊</h1>
+                
+                {/* 1. Statistical Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                    {stats.map((stat, index) => (
+                        <StatCard 
+                            key={index}
+                            title={stat.title}
+                            value={stat.value}
+                            change={stat.change}
+                            icon={stat.icon}
+                            color={stat.color}
+                        />
+                    ))}
                 </div>
 
-                <div className={`${statusItems.lowStockItems.bgColor} p-6 rounded-xl text-center shadow-md`}>
-                    <div className="text-4xl text-red-500 mb-2">
-                        {statusItems.lowStockItems.icon}
+                {/* 2. Main Content Grid: Charts and Status Warnings */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    {/* Left/Center Column (Chart Placeholder) */}
+                    <div className="lg:col-span-2 bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <h2 className="text-2xl font-bold text-gray-800 mb-4">Monthly Sales Performance</h2>
+                        <p className="text-sm text-gray-500 mb-4">Total revenue over the last 4 months.</p>
+                        
+                        {/* Simple Chart Visualization Placeholder */}
+                        <div className="h-64 flex items-end justify-between p-4 bg-gray-50 rounded-lg">
+                            {chartPlaceholderData.map((data, index) => (
+                                <div key={index} className="flex flex-col items-center h-full justify-end w-1/4 px-2">
+                                    <div 
+                                        className="w-full rounded-t-lg bg-blue-500 hover:bg-blue-600 transition duration-300" 
+                                        style={{ height: `${data.sales / 3}%` }} 
+                                    />
+                                    <span className="text-xs text-gray-600 mt-1">{data.month}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <div className="text-sm font-medium text-gray-600">
-                        {statusItems.lowStockItems.label}
-                    </div>
-                    <div className="text-2xl font-bold text-gray-900 mt-1">
-                        {statusItems.lowStockItems.value}
-                    </div>
-                </div>
+                    
+                    {/* Right Column (Status and Quick Links) */}
+                    <div className="lg:col-span-1 space-y-6">
+                        
+                        <h2 className="text-2xl font-bold text-gray-800">Alerts & Actions</h2>
 
-                <div className="flex flex-col items-center p-6 bg-white rounded-xl border-2 border-blue-500 border-dashed text-center shadow-md">
-                    <div className="text-4xl text-blue-500 mb-2">
-                        <CogIcon />
-                    </div>
-                    <div className="text-base font-medium text-gray-800">
-                        Inventory
-                    </div>
-                    <div className="text-sm text-gray-500 mt-1">
-                        Manage Stock
+                        {/* Status Warnings */}
+                        {statusItems.map((item, index) => (
+                            <StatusActionCard 
+                                key={index}
+                                label={item.label}
+                                value={item.value}
+                                bgColor={item.bgColor}
+                                icon={item.icon}
+                                color={item.color}
+                            />
+                        ))}
+
+                        {/* Quick Action Link */}
+                        <StatusActionCard 
+                            label={'Manage Inventory'}
+                            bgColor={'bg-blue-50'}
+                            icon={<CogIcon_Simple />}
+                            color={'text-blue-600'}
+                        />
                     </div>
                 </div>
             </div>

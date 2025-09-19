@@ -7,7 +7,7 @@
       "phone": "9424782368",
       "password": "customer123",
       "role": "customer",
-      "address": "Jammu"
+      "address": "Pune"
     },
     {
       "id": "2",
@@ -31,15 +31,7 @@
       "name": "Air Jordan 1",
       "price": 9999,
       "description": "Iconic basketball sneakers with premium design.",
-      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "category": "Basketball Shoes"
-    },
-    {
-      "id": "8",
-      "name": "Air Jordan 1",
-      "price": 9999,
-      "description": "Iconic basketball sneakers with premium design.",
-      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "image": "https://images.unsplash.com/photo-1618718315344-7cbffaa60b6b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Basketball Shoes"
     },
     {
@@ -47,7 +39,7 @@
       "name": "Adidas Ultraboost",
       "price": 12999,
       "description": "Running sneakers with responsive cushioning.",
-      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "image": "https://images.unsplash.com/photo-1659785568869-aa061a0f8e87?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Running Shoes"
     },
     {
@@ -55,7 +47,7 @@
       "name": "Converse All Star",
       "price": 3500,
       "description": "Classic canvas high-top sneakers for casual wear.",
-      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "image": "https://images.unsplash.com/photo-1565379793984-e65b51b33b37?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Casual Shoes"
     },
     {
@@ -63,7 +55,7 @@
       "name": "Nike Air Force 1",
       "price": 8999,
       "description": "Timeless style and comfort in a low-cut design.",
-      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "image": "https://images.unsplash.com/photo-1643535170091-319c6fe2e191?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Casual Shoes"
     },
     {
@@ -89,14 +81,6 @@
       "description": "Classic skate sneakers with a side stripe design.",
       "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "category": "Skate Shoes"
-    },
-    {
-      "id": "15",
-      "name": "Nike Dunk Low",
-      "price": 10500,
-      "description": "Iconic basketball shoe with street-style flair.",
-      "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "category": "Basketball Shoes"
     },
     {
       "id": "16",
@@ -149,24 +133,25 @@
   ],
   "cartItems": [
     {
-      "id": "000a",
-      "productId": "9",
-      "name": "Adidas Ultraboost",
+      "id": "5fa8",
+      "productId": null,
+      "name": "Air Jordan 1",
       "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "category": "Running Shoes",
-      "originalPrice": 12999,
-      "totalPrice": 25998,
+      "category": "Basketball Shoes",
+      "size": 9,
+      "originalPrice": 9999,
+      "totalPrice": 16799,
       "quantity": 2
     },
     {
-      "id": "d5a5",
-      "productId": "13",
-      "name": "New Balance 990v5",
+      "id": "2fdf",
+      "productId": "10",
+      "name": "Converse All Star",
       "image": "https://images.unsplash.com/photo-1618153478389-b2ed8de18ed3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXNrZXRiYWxsJTIwc25lYWtlcnMlMjBsaWZlc3R5bGV8ZW58MXx8fHwxNzU3OTU1ODQ3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "category": "Running Shoes",
-      "size": 8,
-      "originalPrice": 18500,
-      "totalPrice": 18500,
+      "category": "Casual Shoes",
+      "size": 10,
+      "originalPrice": 3500,
+      "totalPrice": 3500,
       "quantity": 1
     }
   ],
@@ -221,7 +206,7 @@
       "totalPrice": 36996,
       "shippingAddress": "piyush home",
       "paymentMethod": "Card",
-      "status": "Processing",
+      "status": "Delivered",
       "orderDate": "2025-09-17T17:54:19.401Z",
       "trackingNumber": "TRACK-437982"
     },
@@ -257,7 +242,7 @@
       "totalPrice": 9999,
       "shippingAddress": "ada",
       "paymentMethod": "Card",
-      "status": "Processing",
+      "status": "Cancelled",
       "orderDate": "2025-09-18T04:06:21.756Z",
       "trackingNumber": "TRACK-358101"
     },
@@ -426,6 +411,96 @@
       "status": "Processing",
       "orderDate": "2025-09-18T12:17:39.512Z",
       "trackingNumber": "TRACK-23729"
+    },
+    {
+      "id": "98f5",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "9",
+          "name": "Adidas Ultraboost",
+          "price": 12999,
+          "quantity": 2,
+          "size": "N/A"
+        },
+        {
+          "productId": "13",
+          "name": "New Balance 990v5",
+          "price": 18500,
+          "quantity": 1,
+          "size": 8
+        },
+        {
+          "productId": "8",
+          "name": "Air Jordan 1",
+          "price": 9999,
+          "quantity": 1,
+          "size": 9
+        }
+      ],
+      "totalPrice": 54497,
+      "shippingAddress": "Uttrakhand",
+      "paymentMethod": "Credit/Debit Card",
+      "status": "Processing",
+      "orderDate": "2025-09-19T03:21:07.593Z",
+      "trackingNumber": "TRACK-439114"
+    },
+    {
+      "id": "f659",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "16",
+          "name": "Adidas Stan Smith",
+          "price": 7200,
+          "quantity": 1,
+          "size": "N/A"
+        }
+      ],
+      "totalPrice": 7200,
+      "shippingAddress": "oune",
+      "paymentMethod": "Cash on Delivery",
+      "status": "Processing",
+      "orderDate": "2025-09-19T06:36:19.751Z",
+      "trackingNumber": "TRACK-284829"
+    },
+    {
+      "id": "44d1",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "10",
+          "name": "Converse All Star",
+          "price": 3500,
+          "quantity": 1,
+          "size": "N/A"
+        }
+      ],
+      "totalPrice": 3750,
+      "shippingAddress": "oune",
+      "paymentMethod": "Credit/Debit Card",
+      "status": "Processing",
+      "orderDate": "2025-09-19T06:36:37.934Z",
+      "trackingNumber": "TRACK-145782"
+    },
+    {
+      "id": "b0a3",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "10",
+          "name": "Converse All Star",
+          "price": 3500,
+          "quantity": 1,
+          "size": "N/A"
+        }
+      ],
+      "totalPrice": 3750,
+      "shippingAddress": "Pune",
+      "paymentMethod": "Credit/Debit Card",
+      "status": "Processing",
+      "orderDate": "2025-09-19T07:00:18.722Z",
+      "trackingNumber": "TRACK-263046"
     }
   ]
 }
