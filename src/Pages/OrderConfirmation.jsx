@@ -114,7 +114,7 @@ function OrderConfirmation() {
                             Track My Order 🚀
                         </button>
                         <button
-                            onClick={() => navigate('/')}
+                            onClick={() => navigate('/home')}
                             className="flex-1 bg-white text-black border border-black py-3 rounded-lg font-bold hover:bg-gray-100 transition shadow-md"
                         >
                             Continue Shopping
