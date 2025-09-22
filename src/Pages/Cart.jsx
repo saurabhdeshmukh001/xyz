@@ -128,7 +128,7 @@ function Cart() {
                     <div className="text-center py-20 bg-white rounded-xl shadow-lg">
                         <p className="text-xl text-gray-500 mb-4">Your cart is empty. Time to find some fresh kicks!</p>
                         <button
-                            onClick={() => navigate('/')}
+                            onClick={() => navigate('/home')}
                             className="bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition duration-300"
                         >
                             Start Shopping

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import { addProduct } from "../api/api"; // Import the centralized API function
 
 function AddProduct() {
   const [product, setProduct] = useState({
@@ -23,7 +23,8 @@ function AddProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5001/products", {
+      // Use the centralized addProduct function from the API service
+      await addProduct({
         ...product,
         price: parseFloat(product.price)
       });
