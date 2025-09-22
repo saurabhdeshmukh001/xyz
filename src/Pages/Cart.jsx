@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import Navbar from "../components/Navbar";
-import axios from "axios";
 // Using icons for a professional look (FiPlus, FiMinus, FiTrash)
 import { FiPlus, FiMinus, FiTrash } from 'react-icons/fi'; 
+import { fetchCartItems, updateCartItem, deleteCartItem } from '../api/api';
 
 function Cart() {
     const navigate = useNavigate();
@@ -16,15 +16,15 @@ function Cart() {
 
     // Fetches cart items from the server
     useEffect(() => {
-        const fetchCartItems = async () => {
+        const fetchItems = async () => {
             try {
-                const response = await axios.get("http://localhost:5001/cartItems");
-                setCartItems(response.data); 
+                const data = await fetchCartItems();
+                setCartItems(data); 
             } catch (error) {
                 console.error("Error fetching cart items:", error);
             }
         };
-        fetchCartItems();
+        fetchItems();
     }, []);
 
     // Recalculates total whenever cartItems change
@@ -54,7 +54,7 @@ function Cart() {
 
         try {
             // 1. Send API request
-            await axios.patch(`http://localhost:5001/cartItems/${id}`, {
+            await updateCartItem(id, {
                 quantity: newQuantity,
                 totalPrice: newTotalPrice,
             });
@@ -95,7 +95,7 @@ function Cart() {
 
     const handleRemoveFromCart = async (idToRemove) => {
         try {
-            await axios.delete(`http://localhost:5001/cartItems/${idToRemove}`);
+            await deleteCartItem(idToRemove);
 
             // Update state only AFTER successful API response
             setCartItems(cartItems.filter(item => item.id !== idToRemove));

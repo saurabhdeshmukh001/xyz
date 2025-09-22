@@ -140,3 +140,35 @@ export const addUser = async (userData) => {
     throw error;
   }
 };
+
+/**
+ * Deletes a user.
+ * @param {string} userId The ID of the user to delete.
+ * @returns {Promise<Object>} A promise that resolves to the deletion confirmation.
+ */
+
+export const deleteUser = async (userId) => {
+  try {
+    const response = await api.delete(`/users/${userId}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error deleting user with ID ${userId}:`, error);
+    throw error;
+  }
+};
+
+/**
+ * Updates a user's details.
+ * @param {string} userId The ID of the user to update.
+ * @param {Object} updateData The data to update for the user.
+ * @returns {Promise<Object>} A promise that resolves to the updated user object.
+ */
+export const updateUser = async (userId, updateData) => {
+  try {
+    const response = await api.patch(`/users/${userId}`, updateData);
+    return response.data;
+  } catch (error) {
+    console.error(`Error updating user with ID ${userId}:`, error);
+    throw error;
+  }
+};

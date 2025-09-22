@@ -1,6 +1,7 @@
 // App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AddProduct from "./Pages/AddProduct";
+import UpdateProduct from "./components/UpdateProduct";
 import Landing from "./Pages/Landing";
 import Login from "./Pages/Login";
 import Signup from "./Pages/Signup";
@@ -43,6 +44,10 @@ function App() {
         <Route 
           path="/manage-products" 
           element={<ProtectedRoute allowedRoles={['seller']}><ProductManagement /></ProtectedRoute>} 
+        />
+        <Route 
+          path="/edit-product/:id" 
+          element={<ProtectedRoute allowedRoles={['seller']}><UpdateProduct /></ProtectedRoute>} 
         />
         <Route 
           path="/manage-users" 
