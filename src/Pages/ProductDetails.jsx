@@ -1,8 +1,8 @@
 // pages/ProductDetails.jsx (Enhanced Version)
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import Navbar from '../components/Navbar';
+import { fetchProductById, fetchCartItems, addToCart, updateCartItem } from '../api/api';
 // Assuming the product object has an array of available sizes (e.g., product.availableSizes = [7, 8, 9, 10])
 
 function ProductDetails() {
@@ -17,9 +17,9 @@ function ProductDetails() {
     const availableSizes = [7, 8, 9, 10, 11, 12]; // Mock sizes, ideally fetched from product data
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/products/${id}`)
+        fetchProductById(id)
             .then(res => {
-                setProduct(res.data);
+                setProduct(res);
                 setLoading(false);
             })
             .catch(err => {
@@ -38,8 +38,8 @@ function ProductDetails() {
         
         try {
             // Find existing cart item based on both productId AND selectedSize
-            const existingCartItemResponse = await axios.get(`http://localhost:5001/cartItems?productId=${product.id}&size=${selectedSize}`);
-            const existingCartItem = existingCartItemResponse.data[0];
+            const cartItems = await fetchCartItems();
+            const existingCartItem = cartItems.find(item => item.productId === product.id && item.size === selectedSize);
 
             if (existingCartItem) {
                 // UPDATE existing item
@@ -48,7 +48,7 @@ function ProductDetails() {
                     quantity: existingCartItem.quantity + 1,
                     totalPrice: existingCartItem.totalPrice + product.price
                 };
-                await axios.patch(`http://localhost:5001/cartItems/${existingCartItem.id}`, updatedItem);
+                await updateCartItem(existingCartItem.id, updatedItem);
                 setMessage(`Quantity of ${product.name} (Size ${selectedSize}) updated in cart!`);
             } else {
                 // ADD new item
@@ -62,7 +62,7 @@ function ProductDetails() {
                     totalPrice: product.price,
                     quantity: 1
                 };
-                await axios.post("http://localhost:5001/cartItems", newCartItem);
+                await addToCart(newCartItem);
                 setMessage(`${product.name} (Size ${selectedSize}) added to cart!`);
             }
         } catch (err) {

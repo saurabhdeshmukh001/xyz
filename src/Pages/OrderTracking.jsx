@@ -138,19 +138,16 @@ function OrderTracking() {
 
 
     return (
-        // Outermost container uses flex to push the footer down
+        // Outermost container uses flex to push the footer down, without bottom padding
         <div className="flex flex-col min-h-screen bg-gray-50">
             <Navbar />
             
-            {/* Main content container - uses flex-grow to occupy all space between Navbar and Footer.
-                We remove unnecessary margins/padding from this wrapper.
-            */}
-            <div className="flex-grow"> 
-                {/* FIX: Use py-10 for top/bottom general page padding, and mb-0 to ensure no lingering margin pushes the footer up. */}
-                <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10 mb-0"> 
+            {/* Main content container wrapped in <main> with flex-grow to push footer down */}
+            <main className="flex-grow min-h-40vh">
+                <div className="max-w-xl  mx-auto px-2 sm:px-3 lg:px-4 py-6 mb-0 mt-10 pb-10"> 
                     
                     {/* The Order Card - This is where the visual gap is needed at the bottom */}
-                    <div className="bg-white p-8 lg:p-12 rounded-2xl shadow-xl">
+                    <div className="bg-white p-3 lg:p-4 rounded-2xl shadow-xl pb-10">
 
                         <h1 className="text-4xl font-extrabold text-gray-900 mb-2">Order Tracking</h1>
                         <p className="text-lg text-gray-600 mb-8">
@@ -201,10 +198,10 @@ function OrderTracking() {
 
                         {/* Order Details / Items Summary */}
                         <div className="text-left border-t pt-8">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">Order Summary ({order.products.length} Items)</h2>
+                            <h2 className="text-xl font-bold text-gray-900 mb-4">Order Summary ({order.products.length} Items)</h2>
                             
                             {/* Item List */}
-                            <div className="max-h-56 overflow-y-auto space-y-3 pr-2">
+                            <div className="max-h-[200px] overflow-y-auto space-y-3 pr-2">
                                 {order.products.map((item, index) => (
                                     <div key={index} className="flex justify-between items-start p-3 bg-gray-50 rounded-lg">
                                         <div className="flex items-center space-x-4">
@@ -246,7 +243,7 @@ function OrderTracking() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
             {/* The Footer is now correctly pushed to the end of the full scrollable page content. */}
             <Footer />
         </div>

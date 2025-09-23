@@ -2,12 +2,12 @@
   "users": [
     {
       "id": "1",
-      "email": "customer1@example.com",
-      "name": "Customer1",
+      "email": "customer@example.com",
+      "name": "Customer",
       "phone": "9424782368",
       "password": "customer123",
       "role": "customer",
-      "address": "Pune"
+      "address": "kakis"
     },
     {
       "id": "2",
@@ -27,20 +27,13 @@
   ],
   "products": [
     {
-      "id": "7",
-      "name": "Air Jordan 1",
-      "price": 9999,
-      "description": "Iconic basketball sneakers with premium design.",
-      "image": "https://images.unsplash.com/photo-1618718315344-7cbffaa60b6b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Basketball Shoes"
-    },
-    {
       "id": "10",
       "name": "Converse All Star",
       "price": 3500,
       "description": "Classic canvas high-top sneakers for casual wear.",
       "image": "https://images.unsplash.com/photo-1565379793984-e65b51b33b37?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Casual Shoes"
+      "category": "Casual Shoes",
+      "stock": "22"
     },
     {
       "id": "11",
@@ -48,7 +41,8 @@
       "price": 8999,
       "description": "Timeless style and comfort in a low-cut design.",
       "image": "https://images.unsplash.com/photo-1643535170091-319c6fe2e191?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Casual Shoes"
+      "category": "Casual Shoes",
+      "stock": 20
     },
     {
       "id": "12",
@@ -56,7 +50,8 @@
       "price": 6500,
       "description": "Iconic suede sneakers with a retro feel.",
       "image": "https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Casual Shoes"
+      "category": "Casual Shoes",
+      "stock": 20
     },
     {
       "id": "13",
@@ -64,7 +59,8 @@
       "price": 18500,
       "description": "Premium running shoes with superior support and durability.",
       "image": "https://images.unsplash.com/photo-1738951878578-48bed24cc718?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Running Shoes"
+      "category": "Running Shoes",
+      "stock": 20
     },
     {
       "id": "14",
@@ -72,7 +68,8 @@
       "price": 4800,
       "description": "Classic skate sneakers with a side stripe design.",
       "image": "https://images.unsplash.com/photo-1670181830393-41ebf6c576a2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Skate Shoes"
+      "category": "Skate Shoes",
+      "stock": 20
     },
     {
       "id": "16",
@@ -80,7 +77,8 @@
       "price": 7200,
       "description": "Clean, classic tennis shoe silhouette.",
       "image": "https://images.unsplash.com/photo-1505248254168-1de4e1abfa78?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Casual Shoes"
+      "category": "Casual Shoes",
+      "stock": 20
     },
     {
       "id": "17",
@@ -88,7 +86,8 @@
       "price": 6800,
       "description": "Vintage tennis style with modern comfort.",
       "image": "https://images.unsplash.com/photo-1695459590088-d6fd3cc97cfa?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Casual Shoes"
+      "category": "Casual Shoes",
+      "stock": 20
     },
     {
       "id": "18",
@@ -96,7 +95,8 @@
       "price": 7800,
       "description": "The original Nike running shoe, a classic since 1972.",
       "image": "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Running Shoes"
+      "category": "Running Shoes",
+      "stock": 20
     },
     {
       "id": "19",
@@ -104,7 +104,8 @@
       "price": 14500,
       "description": "Stability running shoe designed for long distances.",
       "image": "https://images.unsplash.com/photo-1571741590149-a29f00898167?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Running Shoes"
+      "category": "Running Shoes",
+      "stock": 20
     },
     {
       "id": "20",
@@ -112,7 +113,8 @@
       "price": 4200,
       "description": "A refined, vintage version of the classic All Star.",
       "image": "https://images.unsplash.com/photo-1680204101574-dea570724119?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Casual Shoes"
+      "category": "Casual Shoes",
+      "stock": 20
     },
     {
       "id": "21",
@@ -120,333 +122,14 @@
       "price": 5500,
       "description": "High-top skate shoe with a durable canvas and suede upper.",
       "image": "https://images.unsplash.com/photo-1620237468009-9bbd18f2de23?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Skate Shoes"
+      "category": "Skate Shoes",
+      "stock": 20
     }
   ],
-  "cartItems": [
-    {
-      "id": "39a1",
-      "productId": "7",
-      "name": "Air Jordan 1",
-      "image": "https://images.unsplash.com/photo-1618718315344-7cbffaa60b6b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "category": "Basketball Shoes",
-      "size": 10,
-      "originalPrice": 9999,
-      "totalPrice": 9999,
-      "quantity": 1
-    }
-  ],
+  "cartItems": [],
   "orders": [
     {
-      "id": "772d",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 12999,
-      "shippingAddress": "Kailas pg",
-      "paymentMethod": "COD",
-      "status": "Shipped",
-      "orderDate": "2025-09-17T16:38:27.351Z",
-      "trackingNumber": "TRACK-904214"
-    },
-    {
-      "id": "9c46",
-      "userId": "1",
-      "products": [
-        {
-          "productId": 3,
-          "name": "Sneaker Gamma",
-          "price": 4999,
-          "quantity": 1
-        },
-        {
-          "productId": 7,
-          "name": "Air Jordan 1",
-          "price": 9999,
-          "quantity": 1
-        },
-        {
-          "productId": "11",
-          "name": "Nike Air Force 1",
-          "price": 8999,
-          "quantity": 1
-        },
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 36996,
-      "shippingAddress": "piyush home",
-      "paymentMethod": "Card",
-      "status": "Delivered",
-      "orderDate": "2025-09-17T17:54:19.401Z",
-      "trackingNumber": "TRACK-437982"
-    },
-    {
-      "id": "7478",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "7",
-          "name": "Air Jordan 1",
-          "price": 9999,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 9999,
-      "shippingAddress": "kiidad",
-      "paymentMethod": "Card",
-      "status": "Shipped",
-      "orderDate": "2025-09-18T03:32:41.098Z",
-      "trackingNumber": "TRACK-466369"
-    },
-    {
-      "id": "5fac",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "8",
-          "name": "Air Jordan 1",
-          "price": 9999,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 9999,
-      "shippingAddress": "ada",
-      "paymentMethod": "Card",
-      "status": "Cancelled",
-      "orderDate": "2025-09-18T04:06:21.756Z",
-      "trackingNumber": "TRACK-358101"
-    },
-    {
-      "id": "5567",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 12999,
-      "shippingAddress": "jdaj",
-      "paymentMethod": "UPI",
-      "status": "Processing",
-      "orderDate": "2025-09-18T04:39:18.441Z",
-      "trackingNumber": "TRACK-446517"
-    },
-    {
-      "id": "5006",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 12999,
-      "shippingAddress": "hff",
-      "paymentMethod": "Card",
-      "status": "Processing",
-      "orderDate": "2025-09-18T05:21:07.618Z",
-      "trackingNumber": "TRACK-85173"
-    },
-    {
-      "id": "3e30",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 12999,
-      "shippingAddress": "hgh",
-      "paymentMethod": "Card",
-      "status": "Processing",
-      "orderDate": "2025-09-18T06:50:59.935Z",
-      "trackingNumber": "TRACK-50208"
-    },
-    {
-      "id": "4f0f",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "7",
-          "name": "Air Jordan 1",
-          "price": 9999,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 9999,
-      "shippingAddress": "Bhopal",
-      "paymentMethod": "UPI",
-      "status": "Processing",
-      "orderDate": "2025-09-18T06:59:31.763Z",
-      "trackingNumber": "TRACK-145554"
-    },
-    {
-      "id": "21fb",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "14",
-          "name": "Vans Old Skool",
-          "price": 4800,
-          "quantity": 1
-        }
-      ],
-      "totalPrice": 4800,
-      "shippingAddress": "lknl",
-      "paymentMethod": "Card",
-      "status": "Processing",
-      "orderDate": "2025-09-18T10:52:16.147Z",
-      "trackingNumber": "TRACK-910785"
-    },
-    {
-      "id": "8899",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 12999,
-      "shippingAddress": "pune",
-      "paymentMethod": "UPI",
-      "status": "Processing",
-      "orderDate": "2025-09-18T11:33:44.463Z",
-      "trackingNumber": "TRACK-61711"
-    },
-    {
-      "id": "2fc1",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "8",
-          "name": "Air Jordan 1",
-          "price": 9999,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 9999,
-      "shippingAddress": "Pune",
-      "paymentMethod": "Credit/Debit Card",
-      "status": "Processing",
-      "orderDate": "2025-09-18T12:11:56.245Z",
-      "trackingNumber": "TRACK-849645"
-    },
-    {
-      "id": "a77f",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "13",
-          "name": "New Balance 990v5",
-          "price": 18500,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 18500,
-      "shippingAddress": "Jammu",
-      "paymentMethod": "Credit/Debit Card",
-      "status": "Processing",
-      "orderDate": "2025-09-18T12:12:13.354Z",
-      "trackingNumber": "TRACK-585294"
-    },
-    {
-      "id": "5a37",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 12999,
-      "shippingAddress": "Jammu",
-      "paymentMethod": "UPI",
-      "status": "Processing",
-      "orderDate": "2025-09-18T12:17:39.512Z",
-      "trackingNumber": "TRACK-23729"
-    },
-    {
-      "id": "98f5",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 2,
-          "size": "N/A"
-        },
-        {
-          "productId": "13",
-          "name": "New Balance 990v5",
-          "price": 18500,
-          "quantity": 1,
-          "size": 8
-        },
-        {
-          "productId": "8",
-          "name": "Air Jordan 1",
-          "price": 9999,
-          "quantity": 1,
-          "size": 9
-        }
-      ],
-      "totalPrice": 54497,
-      "shippingAddress": "Uttrakhand",
-      "paymentMethod": "Credit/Debit Card",
-      "status": "Processing",
-      "orderDate": "2025-09-19T03:21:07.593Z",
-      "trackingNumber": "TRACK-439114"
-    },
-    {
-      "id": "f659",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "16",
-          "name": "Adidas Stan Smith",
-          "price": 7200,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 7200,
-      "shippingAddress": "oune",
-      "paymentMethod": "Cash on Delivery",
-      "status": "Processing",
-      "orderDate": "2025-09-19T06:36:19.751Z",
-      "trackingNumber": "TRACK-284829"
-    },
-    {
-      "id": "44d1",
+      "id": "366f",
       "userId": "1",
       "products": [
         {
@@ -458,219 +141,30 @@
         }
       ],
       "totalPrice": 3750,
-      "shippingAddress": "oune",
-      "paymentMethod": "Credit/Debit Card",
-      "status": "Processing",
-      "orderDate": "2025-09-19T06:36:37.934Z",
-      "trackingNumber": "TRACK-145782"
-    },
-    {
-      "id": "b0a3",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "10",
-          "name": "Converse All Star",
-          "price": 3500,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 3750,
-      "shippingAddress": "Pune",
-      "paymentMethod": "Credit/Debit Card",
-      "status": "Processing",
-      "orderDate": "2025-09-19T07:00:18.722Z",
-      "trackingNumber": "TRACK-263046"
-    },
-    {
-      "id": "552e",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "9",
-          "name": "Adidas Ultraboost",
-          "price": 12999,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 12999,
-      "shippingAddress": "Pune",
+      "shippingAddress": "Kailash pg",
       "paymentMethod": "UPI",
       "status": "Processing",
-      "orderDate": "2025-09-19T10:12:08.602Z",
-      "trackingNumber": "TRACK-180027"
+      "orderDate": "2025-09-23T15:27:29.125Z",
+      "trackingNumber": "TRACK-776642"
     },
     {
-      "id": "209c",
+      "id": "5419",
       "userId": "1",
       "products": [
-        {
-          "productId": "5fa8",
-          "name": "Air Jordan 1",
-          "price": 9999,
-          "quantity": 3,
-          "size": 9
-        },
-        {
-          "productId": "20",
-          "name": "Converse Chuck 70",
-          "price": 4200,
-          "quantity": 2,
-          "size": 8
-        },
-        {
-          "productId": "11",
-          "name": "Nike Air Force 1",
-          "price": 8999,
-          "quantity": 1,
-          "size": 10
-        },
-        {
-          "productId": "21",
-          "name": "Vans Sk8-Hi",
-          "price": 5500,
-          "quantity": 1,
-          "size": 10
-        },
-        {
-          "productId": "19",
-          "name": "Asics Gel-Kayano",
-          "price": 14500,
-          "quantity": 1,
-          "size": 7
-        },
-        {
-          "productId": "19",
-          "name": "Asics Gel-Kayano",
-          "price": 14500,
-          "quantity": 1,
-          "size": 8
-        },
-        {
-          "productId": "12",
-          "name": "Puma Suede Classic",
-          "price": 6500,
-          "quantity": 1,
-          "size": 8
-        },
-        {
-          "productId": "10",
-          "name": "Converse All Star",
-          "price": 3500,
-          "quantity": 1,
-          "size": 10
-        },
         {
           "productId": "7",
           "name": "Air Jordan 1",
           "price": 9999,
-          "quantity": 1,
-          "size": 12
+          "quantity": 5,
+          "size": 10
         }
       ],
-      "totalPrice": 101895,
-      "shippingAddress": "oune",
+      "totalPrice": 49995,
+      "shippingAddress": "kakis",
       "paymentMethod": "Credit/Debit Card",
       "status": "Processing",
-      "orderDate": "2025-09-19T10:38:44.187Z",
-      "trackingNumber": "TRACK-944946"
-    },
-    {
-      "id": "4732",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "21",
-          "name": "Vans Sk8-Hi",
-          "price": 5500,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 5500,
-      "shippingAddress": "ihiyg",
-      "paymentMethod": "Credit/Debit Card",
-      "status": "Processing",
-      "orderDate": "2025-09-19T10:39:06.182Z",
-      "trackingNumber": "TRACK-63613"
-    },
-    {
-      "id": "6104",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "11",
-          "name": "Nike Air Force 1",
-          "price": 8999,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 8999,
-      "shippingAddress": "pune",
-      "paymentMethod": "Credit/Debit Card",
-      "status": "Cancelled",
-      "orderDate": "2025-09-19T11:02:01.396Z",
-      "trackingNumber": "TRACK-306041"
-    },
-    {
-      "id": "2205",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "17",
-          "name": "Reebok Club C 85",
-          "price": 6800,
-          "quantity": 1,
-          "size": "N/A"
-        }
-      ],
-      "totalPrice": 6800,
-      "shippingAddress": "pune",
-      "paymentMethod": "Credit/Debit Card",
-      "status": "Processing",
-      "orderDate": "2025-09-19T13:00:06.850Z",
-      "trackingNumber": "TRACK-843702"
-    },
-    {
-      "id": "2726",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "11",
-          "name": "Nike Air Force 1",
-          "price": 8999,
-          "quantity": 8,
-          "size": 9
-        }
-      ],
-      "totalPrice": 71992,
-      "shippingAddress": "jkffluflyuf",
-      "paymentMethod": "UPI",
-      "status": "Processing",
-      "orderDate": "2025-09-19T13:00:41.505Z",
-      "trackingNumber": "TRACK-425037"
-    },
-    {
-      "id": "85c5",
-      "userId": "1",
-      "products": [
-        {
-          "productId": "13",
-          "name": "New Balance 990v5",
-          "price": 18500,
-          "quantity": 3,
-          "size": 9
-        }
-      ],
-      "totalPrice": 55500,
-      "shippingAddress": "Pune",
-      "paymentMethod": "UPI",
-      "status": "Processing",
-      "orderDate": "2025-09-19T13:09:58.955Z",
-      "trackingNumber": "TRACK-502808"
+      "orderDate": "2025-09-23T15:48:04.361Z",
+      "trackingNumber": "TRACK-670927"
     }
   ]
 }

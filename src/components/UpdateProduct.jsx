@@ -14,6 +14,7 @@ const UpdateProduct = () => {
         name: "",
         category: "",
         price: "",
+        stock: 0,
         description: "", // Added description for a more complete form
         image: "" // Added image URL
     });
@@ -52,7 +53,7 @@ const UpdateProduct = () => {
             setSuccessMessage("Product updated successfully!");
             setTimeout(() => {
                 setSuccessMessage("");
-                navigate("/product-management"); // redirect back
+                navigate("/admin"); // redirect back
             }, 2000);
         } catch (error) {
             console.error("Error updating product:", error);
@@ -139,6 +140,19 @@ const UpdateProduct = () => {
                                     name="price"
                                     value={product.price}
                                     onChange={handleChange}
+                                    className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
+                                    required
+                                />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Stock</label>
+                                <input
+                                    type="number"
+                                    name="stock"
+                                    value={product.stock}
+                                    onChange={handleChange}
+                                    min="0"
                                     className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition"
                                     required
                                 />

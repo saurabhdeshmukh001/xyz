@@ -13,7 +13,7 @@ const UserProfileManagement = () => {
     useEffect(() => {
         fetchUsers()
             .then((response) => {
-                const filteredUsers = response.data.filter(user => user.role === "customer");
+                const filteredUsers = response.filter(user => user.role === "customer");
                 setUsers(filteredUsers);
                 setLoading(false);
             })
@@ -43,6 +43,10 @@ const UserProfileManagement = () => {
 
     if (loading) {
         return <div className="p-8 text-center text-gray-700">Loading customer data...</div>;
+    }
+
+    if (!loading && users.length === 0) {
+        return <div className="p-8 text-center text-gray-700">No customer profiles found</div>;
     }
 
     return (

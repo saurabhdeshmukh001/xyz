@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import axios from "axios";
+import { fetchProducts } from "../api/api";
 import ProductCard from "./productCard";
 import Carousel from "../components/Carousel"; 
 // Assuming ProductCard is available in the current directory or imported correctly
@@ -11,11 +11,12 @@ function Home() {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [searchQuery, setSearchQuery] = useState("");
+    const [filteredProducts, setFilteredProducts] = useState([]);
 
     useEffect(() => {
-        axios
-            .get("http://localhost:5001/products")
-            .then((res) => setProducts(res.data))
+        fetchProducts()
+            .then((data) => setProducts(data))
             .catch((err) => console.error("Error fetching products:", err));
     }, []);
 
@@ -28,10 +29,31 @@ function Home() {
         return () => window.removeEventListener("categorySelected", handleCategorySelect);
     }, []);
 
-    const filteredProducts =
-        selectedCategory && selectedCategory !== "All"
-            ? products.filter((p) => p.category === selectedCategory)
-            : products;
+    useEffect(() => {
+        const handleSearch = (e) => {
+            setSearchQuery(e.detail);
+        };
+        window.addEventListener("searchProduct", handleSearch);
+        return () => window.removeEventListener("searchProduct", handleSearch);
+    }, []);
+
+    useEffect(() => {
+        let filtered = products;
+
+        if (selectedCategory && selectedCategory !== "All") {
+            filtered = filtered.filter((p) => p.category === selectedCategory);
+        }
+
+        if (searchQuery && searchQuery.trim() !== "") {
+            const lowerSearch = searchQuery.toLowerCase();
+            filtered = filtered.filter((p) =>
+                p.name.toLowerCase().includes(lowerSearch) ||
+                (p.description && p.description.toLowerCase().includes(lowerSearch))
+            );
+        }
+
+        setFilteredProducts(filtered);
+    }, [products, selectedCategory, searchQuery]);
 
     // --- New Section: Banner Component (Inline for Simplicity) ---
     const PromotionBanner = () => (

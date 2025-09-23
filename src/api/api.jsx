@@ -172,3 +172,55 @@ export const updateUser = async (userId, updateData) => {
     throw error;
   }
 };
+
+/**
+ * API function to fetch all orders.
+ * @returns {Promise<Array>} A promise that resolves to an array of order objects.
+ */
+export const fetchOrders = async () => {
+  try {
+    const response = await api.get("/orders");
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    throw error;
+  }
+};
+/**
+ * Fetches the address of a user by userId.
+ * @param {string} userId The ID of the user.
+ * @returns {Promise<Array>} A promise that resolves to an array containing the user's address, or an empty array.
+ */
+export const fetchUserAddresses = async (userId) => {
+  try {
+    const response = await api.get("/orders");
+    const users = response.data;
+    const user = users.find((u) => u.id === userId);
+    if (user && order.shippingAddress) {
+      return [user.shippingAddress];
+    }
+    return [];
+  } catch (error) {
+    console.error("Error fetching user addresses:", error);
+    throw error;
+  }
+};
+/**
+ * Fetches shipping addresses from orders. Optionally filters by userId.
+ * @param {string} [userId] Optional user ID to filter orders.
+ * @returns {Promise<Array>} A promise that resolves to an array of shipping addresses.
+ */
+export const fetchAddressesFromOrders = async (userId) => {
+  try {
+    const response = await api.get("/orders");
+    const orders = response.data;
+    const filteredOrders = userId
+      ? orders.filter((order) => order.userId === userId)
+      : orders;
+    const addresses = filteredOrders.map((order) => order.shippingAddress);
+    return addresses;
+  } catch (error) {
+    console.error("Error fetching addresses from orders:", error);
+    throw error;
+  }
+};

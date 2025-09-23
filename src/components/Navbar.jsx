@@ -11,6 +11,9 @@ function Navbar() {
   const isCartPage = location.pathname === "/cart";
 
   const [user, setUser] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -22,6 +25,41 @@ function Navbar() {
       setUser(null);
     }
   }, [location]);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await fetch('/api/products');
+        const data = await response.json();
+        setProducts(data);
+        setFilteredProducts(data);
+      } catch (error) {
+        console.error('Failed to fetch products:', error);
+      }
+    }
+    fetchProducts();
+  }, []);
+
+  useEffect(() => {
+    function handleSearch(event) {
+      const query = event.detail.toLowerCase();
+      const filtered = products.filter(product =>
+        product.name.toLowerCase().includes(query)
+      );
+      setFilteredProducts(filtered);
+    }
+    window.addEventListener("searchProduct", handleSearch);
+    return () => window.removeEventListener("searchProduct", handleSearch);
+  }, [products]);
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent("searchProduct", { detail: searchQuery }));
+  };
 
   if (isLoginPage) {
     return (
@@ -41,10 +79,9 @@ function Navbar() {
 
       {user && (user.role === "admin" || user.role === "seller") && (
         <div className="flex items-center space-x-8">
-        <Link to="/admin">
-        <h1 className="font-bold">Admin Dashboard</h1>
-      </Link>
-      
+          <Link to="/admin">
+            <h1 className="font-bold">Admin Dashboard</h1>
+          </Link>
           <div className="relative group cursor-pointer">
             <span className="hover:underline">Profile</span>
             <div className="absolute right-0 mt-0 w-56 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">
@@ -67,6 +104,16 @@ function Navbar() {
 
       {user && user.role === "customer" && (
         <div className="flex items-center space-x-8">
+          <form onSubmit={handleSearchSubmit} className="flex items-center space-x-2">
+            <input
+              type="text"
+              placeholder="Search products..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="border rounded px-2 py-1 text-black bg-white"
+            />
+            <button type="submit" className="bg-gray-700 px-3 py-1 rounded hover:bg-gray-600">Search</button>
+          </form>
           <Link to="/home" className="hover:underline">Home</Link>
           <Link to="/cart" className="hover:underline">Cart</Link>
           {!isCartPage && (
@@ -100,6 +147,7 @@ function Navbar() {
               </div>
             </div>
           )}
+          
           <div className="relative group cursor-pointer">
             <span className="hover:underline">Profile</span>
             <div className="absolute right-0 mt-0 w-56 bg-gray-900 text-white rounded-md shadow-lg p-2 hidden group-hover:block z-50">

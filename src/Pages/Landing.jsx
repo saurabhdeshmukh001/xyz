@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 function Landing() {
   return (
     
-    <div className="relative h-screen w-full overflow-hidden">
+    <div className="relative min-h-screen w-full overflow-hidden flex flex-col">
       {/* Background Video */}
       <video
         autoPlay
@@ -21,7 +21,7 @@ function Landing() {
       <Navbar></Navbar>
     
       {/* Hero Content */}
-      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-6">
+      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center text-white px-6 flex-grow">
         <p className="uppercase tracking-widest text-sm mb-2">Exclusive Deals</p>
         <h2 className="text-4xl md:text-6xl font-extrabold mb-4">
           Start Your Shopping Journey

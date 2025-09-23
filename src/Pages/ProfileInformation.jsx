@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { fetchUsers, updateUser } from "../api/api";
 
 function ProfileInformation() {
   const [user, setUser] = useState(null);
@@ -19,15 +19,19 @@ function ProfileInformation() {
       const parsedUser = JSON.parse(storedUser);
       setUser(parsedUser);
 
-      axios.get(`http://localhost:5001/users/${parsedUser.id}`)
-        .then(response => {
-          const userData = response.data;
-          setFormData({
-            name: userData.name,
-            phone: userData.phone || '',
-            email: userData.email,
-            password: '',
-          });
+      fetchUsers()
+        .then(users => {
+          const userData = users.find(u => u.id === parsedUser.id);
+          if (userData) {
+            setFormData({
+              name: userData.name,
+              phone: userData.phone || '',
+              email: userData.email,
+              password: '',
+            });
+          } else {
+            setError("Failed to load user data.");
+          }
         })
         .catch(err => {
           console.error("Error fetching user data:", err);
@@ -52,15 +56,17 @@ function ProfileInformation() {
     }
 
     try {
-      const response = await axios.patch(`http://localhost:5001/users/${user.id}`, {
+      const updatedData = {
         name: formData.name,
         phone: formData.phone,
         email: formData.email,
         password: formData.password || user.password,
-      });
+      };
 
-      localStorage.setItem('user', JSON.stringify(response.data));
-      setUser(response.data);
+      const updatedUser = await updateUser(user.id, updatedData);
+
+      localStorage.setItem('user', JSON.stringify(updatedUser));
+      setUser(updatedUser);
       setMessage("Profile updated successfully!");
       setIsEditing(false);
 

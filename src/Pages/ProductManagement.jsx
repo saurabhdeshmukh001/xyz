@@ -17,6 +17,7 @@ const ProductManagement = () => {
                     name: product.name,
                     category: product.category,
                     price: product.price,
+                    stock: product.stock,
                     ...product
                 }));
                 setProducts(productsWithId);
@@ -76,7 +77,7 @@ const ProductManagement = () => {
                     <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
                             <tr>
-                                {['Name', 'Category', 'Price (₹)', 'Actions'].map((header) => (
+                                {['Name', 'Category', 'Price (₹)', 'Stock', 'Actions'].map((header) => (
                                     <th key={header} className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         {header}
                                     </th>
@@ -89,6 +90,7 @@ const ProductManagement = () => {
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900">{product.name}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{product.category}</td>
                                     <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-red-600">₹{product.price.toLocaleString('en-IN')}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">{product.stock}</td>
                                     {/* FIX: Increased space-x-2 to space-x-4 for a larger gap */}
                                     <td className="px-6 py-4 whitespace-nowrap text-sm space-x-4">
                                         <button
