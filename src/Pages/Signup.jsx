@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { addUser } from "../api/api"; // Import the new API function
 
 function Signup() {
   const [name, setName] = useState("");
@@ -14,6 +15,7 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
@@ -38,21 +40,13 @@ function Signup() {
     };
 
     try {
-      const response = await fetch("http://localhost:5001/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      });
-      if (response.ok) {
-        const createdUser = await response.json();
-        localStorage.setItem("user", JSON.stringify(createdUser));
-        setError("");
-        navigate("/home");
-      } else {
-        setError("Failed to create account. Please try again.");
-      }
+      // Use the centralized API function to add a new user
+      const createdUser = await addUser(newUser);
+      
+      localStorage.setItem("user", JSON.stringify(createdUser));
+      setError("");
+      navigate("/home");
+      
     } catch (err) {
       setError("An error occurred. Please try again.");
     }

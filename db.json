@@ -123,7 +123,19 @@
       "category": "Skate Shoes"
     }
   ],
-  "cartItems": [],
+  "cartItems": [
+    {
+      "id": "39a1",
+      "productId": "7",
+      "name": "Air Jordan 1",
+      "image": "https://images.unsplash.com/photo-1618718315344-7cbffaa60b6b?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Basketball Shoes",
+      "size": 10,
+      "originalPrice": 9999,
+      "totalPrice": 9999,
+      "quantity": 1
+    }
+  ],
   "orders": [
     {
       "id": "772d",
@@ -599,7 +611,7 @@
       "totalPrice": 8999,
       "shippingAddress": "pune",
       "paymentMethod": "Credit/Debit Card",
-      "status": "Processing",
+      "status": "Cancelled",
       "orderDate": "2025-09-19T11:02:01.396Z",
       "trackingNumber": "TRACK-306041"
     },

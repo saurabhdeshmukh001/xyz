@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { fetchUsers } from "../api/api"; // Import the new API function
 
 function Login() {
   const [role, setRole] = useState("customer");
@@ -15,13 +16,8 @@ function Login() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:5001/users");
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch user data.");
-      }
-
-      const users = await response.json();
+      // Use the centralized API function to fetch users
+      const users = await fetchUsers();
 
       const user = users.find(
         (u) => u.email === email && u.role === role
@@ -59,7 +55,7 @@ function Login() {
       </video>
 
       {/* Overlay to decrease video opacity */}
-      <div className="absolute inset-0 bg-black opacity-50 z-0"></div> {/* Adjust opacity-50 for desired darkness */}
+      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
 
       <Navbar></Navbar>
 
