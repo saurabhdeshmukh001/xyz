@@ -65,7 +65,7 @@ function Home() {
                 Limited-time offers on lifestyle wear and accessories. Don't miss out on fresh street style.
             </p>
             <button
-                onClick={() => navigate('/accessories')} // Assuming an accessories route exists
+                onClick={() => navigate()} // Assuming an accessories route exists
                 className="bg-red-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-red-700 transition duration-300 transform hover:scale-105"
             >
                 Explore Promotions

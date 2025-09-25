@@ -7,7 +7,7 @@
       "phone": "9424782368",
       "password": "customer123",
       "role": "customer",
-      "address": "kakis"
+      "address": "Pune"
     },
     {
       "id": "2",
@@ -124,6 +124,42 @@
       "image": "https://images.unsplash.com/photo-1620237468009-9bbd18f2de23?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "category": "Skate Shoes",
       "stock": 20
+    },
+    {
+      "id": "22",
+      "name": "Jordan 4 Retro",
+      "price": 15999,
+      "description": "Classic silhouette with visible air cushioning and mesh panels. A street-wear favorite.",
+      "image": "https://images.unsplash.com/photo-1694729238828-028c0b74c579?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Basketball Shoes",
+      "stock": 18
+    },
+    {
+      "id": "23",
+      "name": "Adidas Samba OG",
+      "price": 6999,
+      "description": "Timeless indoor soccer shoe reborn as a lifestyle icon. Features a suede T-toe design.",
+      "image": "https://images.unsplash.com/photo-1695552835054-95b185af3d11?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Casual Shoes",
+      "stock": 25
+    },
+    {
+      "id": "24",
+      "name": "Brooks Ghost 15",
+      "price": 11500,
+      "description": "Reliable daily trainer known for its balanced cushioning and smooth ride. Excellent for distance running.",
+      "image": "https://believeintherun.com/wp-content/uploads/2023/02/brooks-ghost-15-cover-2.jpg",
+      "category": "Running Shoes",
+      "stock": 30
+    },
+    {
+      "id": "25",
+      "name": "Nike Blazer Mid '77",
+      "price": 7999,
+      "description": "Vintage basketball style with a clean, leather finish and exposed foam tongue. Great for retro looks.",
+      "image": "https://images.unsplash.com/photo-1607792246387-4765c382c5a7?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Casual Shoes",
+      "stock": 22
     }
   ],
   "cartItems": [],
@@ -165,6 +201,25 @@
       "status": "Processing",
       "orderDate": "2025-09-23T15:48:04.361Z",
       "trackingNumber": "TRACK-670927"
+    },
+    {
+      "id": "1756",
+      "userId": "1",
+      "products": [
+        {
+          "productId": "18",
+          "name": "Nike Cortez",
+          "price": 7800,
+          "quantity": 1,
+          "size": 9
+        }
+      ],
+      "totalPrice": 7800,
+      "shippingAddress": "Pune",
+      "paymentMethod": "Credit/Debit Card",
+      "status": "Processing",
+      "orderDate": "2025-09-25T06:24:57.109Z",
+      "trackingNumber": "TRACK-706385"
     }
   ]
 }
